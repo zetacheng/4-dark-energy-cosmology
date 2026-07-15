@@ -1,0 +1,47 @@
+name: Scientific gate
+description: Specify and track one scientific gate
+title: "[GATE] "
+labels: ["gate"]
+body:
+  - type: input
+    id: gate_id
+    attributes:
+      label: Gate ID
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: Scientific question
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope and locked assumptions
+    validations:
+      required: true
+  - type: textarea
+    id: conventions
+    attributes:
+      label: Locked conventions
+    validations:
+      required: true
+  - type: textarea
+    id: anchors
+    attributes:
+      label: Analytic and regression anchors
+    validations:
+      required: true
+  - type: textarea
+    id: kill
+    attributes:
+      label: Kill criterion and pre-registered verdicts
+    validations:
+      required: true
+  - type: textarea
+    id: deliverables
+    attributes:
+      label: Required computations and deliverables
+    validations:
+      required: true

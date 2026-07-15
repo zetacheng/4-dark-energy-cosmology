@@ -1,0 +1,40 @@
+name: Paper synchronization
+description: Track an authorized paper import or accepted paper edit
+title: "[PAPER SYNC] "
+labels: ["paper"]
+body:
+  - type: textarea
+    id: source
+    attributes:
+      label: Source and version
+      description: Identify the source artifact, version, branch, and commit if available.
+    validations:
+      required: true
+  - type: textarea
+    id: authorization
+    attributes:
+      label: Principal Investigator authorization
+    validations:
+      required: true
+  - type: textarea
+    id: gates
+    attributes:
+      label: Accepted gates and reviewer verdicts
+      description: Use N/A for a historical source import.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Sections and files in scope
+    validations:
+      required: true
+  - type: checkboxes
+    id: safeguards
+    attributes:
+      label: Safeguards
+      options:
+        - label: No unreviewed result will be promoted into paper text.
+          required: true
+        - label: Existing paper content and history will be preserved.
+          required: true
