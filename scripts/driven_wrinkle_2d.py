@@ -7,7 +7,8 @@ Model: K u_t = -mu_eff^2 u + tau_eff Lap u - kappa_eff Lap^2 u - lambda u^3.
 """
 import numpy as np
 import os, csv
-RESULTS = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'results')
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+REGEN = os.path.join(REPO_ROOT, 'results', 'driven-interface-wrinkle', 'regen')
 
 def run2d(mu2, tau, kap, lam, K=1.0, N=128, nwave=12, T=None, seed=3):
     kstar = np.sqrt(-tau/(2*kap))
@@ -38,7 +39,9 @@ def run2d(mu2, tau, kap, lam, K=1.0, N=128, nwave=12, T=None, seed=3):
     # pattern type heuristic: count spectral peaks on the k=k* ring
     return dict(u=u, kd=kd, kstar=kstar, A=A, w=w, x=x, L=L, N=N)
 
-def main():
+def main(outdir=None):
+    outdir = REGEN if outdir is None else outdir
+    os.makedirs(outdir, exist_ok=True)
     print("="*70); print("DRIVEN WRINKLE — INDEPENDENT 2D SPECTRAL CROSS-CHECK"); print("="*70)
     mu2, tau, kap, lam, K = -0.02, -0.30, 1.0, 1.0, 1.0
     r = run2d(mu2, tau, kap, lam, K)
@@ -47,8 +50,8 @@ def main():
     print(f"  pattern: finite-k structure on the k=k_star ring (stripe/labyrinth/foam),")
     print(f"    stationary dissipative attractor. Consistent with the 1D solver.")
     # save a coarse 2D field snapshot
-    with open(os.path.join(RESULTS, 'driven_wrinkle_2d_field.csv'), 'w', newline='') as f:
-        w = csv.writer(f); w.writerow(['ix', 'iy', 'u'])
+    with open(os.path.join(outdir, 'driven_wrinkle_2d_field.csv'), 'w', newline='') as f:
+        w = csv.writer(f, lineterminator='\n'); w.writerow(['ix', 'iy', 'u'])
         for i in range(0, r['N'], 4):
             for j in range(0, r['N'], 4):
                 w.writerow([i, j, r['u'][i, j]])

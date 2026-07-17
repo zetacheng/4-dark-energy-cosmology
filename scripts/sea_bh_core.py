@@ -9,7 +9,8 @@ AND numeric. Hayward realization f=1-2GM r^2/(r^3+2GM L^2).
 import numpy as np
 import sympy as sp
 import os, csv
-RESULTS = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'results')
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+REGEN = os.path.join(REPO_ROOT, 'results', 'sea-interface-phase-conversion', 'regen')
 
 def curvature_invariants_symbolic():
     r, G, M, L = sp.symbols('r G M L', positive=True)
@@ -24,7 +25,9 @@ def curvature_invariants_symbolic():
 
 def hline(): print("-"*72)
 
-def main():
+def main(outdir=None):
+    outdir = REGEN if outdir is None else outdir
+    os.makedirs(outdir, exist_ok=True)
     print("="*72); print("SEA-INTERFACE GATE — Phases 10-12: REGULAR BLACK-HOLE CORE PILOT"); print("="*72)
     sy = curvature_invariants_symbolic()
     r, G, M, L, f = sy['r'], sy['G'], sy['M'], sy['L'], sy['f']
@@ -89,8 +92,8 @@ def main():
     # ---- CSV: metric, density, curvature vs r ----
     fn_f = sp.lambdify(r, f.subs(subs), 'numpy'); fn_rho = sp.lambdify(r, rho.subs(subs), 'numpy')
     fn_K = sp.lambdify(r, sy['Kre'].subs(subs), 'numpy')
-    with open(os.path.join(RESULTS, 'sea_bh_core.csv'), 'w', newline='') as fcsv:
-        w = csv.writer(fcsv); w.writerow(['r', 'f', 'rho_eff', 'Kretschmann'])
+    with open(os.path.join(outdir, 'sea_bh_core.csv'), 'w', newline='') as fcsv:
+        w = csv.writer(fcsv, lineterminator='\n'); w.writerow(['r', 'f', 'rho_eff', 'Kretschmann'])
         for rr in np.geomspace(1e-3, 30, 200):
             w.writerow([rr, float(fn_f(rr)), float(fn_rho(rr)), float(fn_K(rr))])
     print("\nCSV: results/sea_bh_core.csv")

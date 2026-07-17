@@ -11,7 +11,8 @@ condensate mass-modulation m(x) (sigma-background). Candidate D (fermion) and A
 import numpy as np
 import os, csv
 from scipy.linalg import eigh_tridiagonal
-RESULTS = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'results')
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+REGEN = os.path.join(REPO_ROOT, 'results', 'wrinkle-bound-excitation', 'regen')
 
 # ----------------------------------------------------------------------
 # Scalar Klein-Gordon 3D radial bound state:  -u'' + [m^2 - U(r)] u = E^2 u
@@ -97,7 +98,9 @@ def dirac_direct(minf, dm, R, L=80.0, N=1200):
 
 def hline(): print("-"*72)
 
-def main():
+def main(outdir=None):
+    outdir = REGEN if outdir is None else outdir
+    os.makedirs(outdir, exist_ok=True)
     print("="*72)
     print("WRINKLE-BOUND DARK-EXCITATION GATE")
     print("="*72)
@@ -220,16 +223,16 @@ def main():
     print("#"*72)
 
     # -------- CSV / profiles --------
-    with open(os.path.join(RESULTS, 'wrinkle_bound_eigen.csv'), 'w', newline='') as f:
-        w = csv.writer(f); w.writerow(['candidate', 'U0_or_dm', 'R', 'E0', 'threshold', 'bound', 'xi_loc'])
+    with open(os.path.join(outdir, 'wrinkle_bound_eigen.csv'), 'w', newline='') as f:
+        w = csv.writer(f, lineterminator='\n'); w.writerow(['candidate', 'U0_or_dm', 'R', 'E0', 'threshold', 'bound', 'xi_loc'])
         w.writerow(['scalar_KG', 0.4, R, ks['E0'], m_dyn, ks['bound'], ks['xi_loc']])
         w.writerow(['fermion_Dirac', dm, R, dw['E0'], m_dyn, dw['bound'], ''])
-    with open(os.path.join(RESULTS, 'wrinkle_threshold.csv'), 'w', newline='') as f:
-        w = csv.writer(f); w.writerow(['R', 'U0_crit', 'U0crit_R2'])
+    with open(os.path.join(outdir, 'wrinkle_threshold.csv'), 'w', newline='') as f:
+        w = csv.writer(f, lineterminator='\n'); w.writerow(['R', 'U0_crit', 'U0crit_R2'])
         for RR in (2.0, 4.0, 8.0):
             Uc = critical_U0(m_dyn, RR); w.writerow([RR, Uc, Uc*RR**2])
-    with open(os.path.join(RESULTS, 'wrinkle_bound_profile.csv'), 'w', newline='') as f:
-        w = csv.writer(f); w.writerow(['r', 'psi'])
+    with open(os.path.join(outdir, 'wrinkle_bound_profile.csv'), 'w', newline='') as f:
+        w = csv.writer(f, lineterminator='\n'); w.writerow(['r', 'psi'])
         u = ks['u']/np.sqrt(np.trapezoid(ks['u']**2, ks['r']))
         for i in range(0, len(ks['r']), 8): w.writerow([ks['r'][i], u[i]])
     print("\nCSV: results/wrinkle_bound_eigen.csv, wrinkle_threshold.csv, wrinkle_bound_profile.csv")

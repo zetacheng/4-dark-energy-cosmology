@@ -10,7 +10,8 @@ return ledger, regressions. Phase 10-12 (regular BH core) in scripts/sea_bh_core
 import numpy as np
 import os, csv
 from scipy.linalg import eigh_tridiagonal
-RESULTS = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'results')
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+REGEN = os.path.join(REPO_ROOT, 'results', 'sea-interface-phase-conversion', 'regen')
 
 # ---------------- Potential A (tilted double well) ----------------
 def VA(phi, lam=1.0, v=1.0, eps=0.0):  return 0.25*lam*(phi**2-v**2)**2 + eps*phi
@@ -58,7 +59,9 @@ def fluct_spectrum(phi, y, ddV):
 
 def hline(): print("-"*72)
 
-def main():
+def main(outdir=None):
+    outdir = REGEN if outdir is None else outdir
+    os.makedirs(outdir, exist_ok=True)
     print("="*72); print("SEA-INTERFACE PHASE-CONVERSION FOUNDATION GATE (Phases 0-9)"); print("="*72)
     print("THIS IS A HIGHER-DIMENSIONAL SEA-INTERFACE MODEL-ENLARGEMENT TEST, NOT A")
     print("DERIVATION FROM THE CURRENT FOUR-DIMENSIONAL ACTION.")
@@ -212,11 +215,11 @@ def main():
     print("#"*72)
 
     # -------- CSV / profiles --------
-    with open(os.path.join(RESULTS, 'sea_wall_profile.csv'), 'w', newline='') as f:
-        wtr = csv.writer(f); wtr.writerow(['y', 'phi_A', 'phi_B'])
+    with open(os.path.join(outdir, 'sea_wall_profile.csv'), 'w', newline='') as f:
+        wtr = csv.writer(f, lineterminator='\n'); wtr.writerow(['y', 'phi_A', 'phi_B'])
         for i in range(0, len(y), 10): wtr.writerow([y[i], phiA[i], phiB[i]])
-    with open(os.path.join(RESULTS, 'sea_reverse_transition.csv'), 'w', newline='') as f:
-        wtr = csv.writer(f); wtr.writerow(['I_curvature', 'phi_lattice_min', 'E_unwind'])
+    with open(os.path.join(outdir, 'sea_reverse_transition.csv'), 'w', newline='') as f:
+        wtr = csv.writer(f, lineterminator='\n'); wtr.writerow(['I_curvature', 'phi_lattice_min', 'E_unwind'])
         for i in range(len(Is)): wtr.writerow([Is[i], phi_lat[i], E_unwind[i]])
     print("\nCSV: results/sea_wall_profile.csv, results/sea_reverse_transition.csv")
     return dict(sigA=sigA, ZhA=ZhA, wall_ok=wall_ok, I_spin=I_spin, w_eff=w_eff)

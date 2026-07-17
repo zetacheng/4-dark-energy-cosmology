@@ -10,8 +10,9 @@ Phases: 2 linear band; 3 nonlinear saturation (spectral 1D + FD cross-check + 2D
 5 energy balance; 6 effective stress/EOS; 8 parameter scan; regressions; verdict.
 """
 import numpy as np
-import os, sys, csv
-RESULTS = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'results')
+import os, csv
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+REGEN = os.path.join(REPO_ROOT, 'results', 'driven-interface-wrinkle', 'regen')
 Lam = 1.0     # cutoff (units); k reported as k/Lambda
 
 # ----------------------------------------------------------------------
@@ -109,7 +110,9 @@ def energy_eos(r):
 
 def hline(): print("-"*72)
 
-def main():
+def main(outdir=None):
+    outdir = REGEN if outdir is None else outdir
+    os.makedirs(outdir, exist_ok=True)
     print("="*72)
     print("DRIVEN DE-INTERFACE WRINKLE GATE (Swift-Hohenberg EFT feasibility)")
     print("="*72)
@@ -234,15 +237,15 @@ def main():
     print("#"*72)
 
     # ---------------- CSV / profiles ----------------
-    with open(os.path.join(RESULTS, 'driven_phase_diagram.csv'), 'w', newline='') as f:
-        w = csv.writer(f); w.writerow(['mu_eff2', 'tau_eff', 'band', 'kstar_over_Lam', 'w_static', 'class'])
+    with open(os.path.join(outdir, 'driven_phase_diagram.csv'), 'w', newline='') as f:
+        w = csv.writer(f, lineterminator='\n'); w.writerow(['mu_eff2', 'tau_eff', 'band', 'kstar_over_Lam', 'w_static', 'class'])
         for row in rows: w.writerow(row)
     ks = np.linspace(0, 2.0, 200)
-    with open(os.path.join(RESULTS, 'driven_dispersion.csv'), 'w', newline='') as f:
-        w = csv.writer(f); w.writerow(['k', 's(k)'])
+    with open(os.path.join(outdir, 'driven_dispersion.csv'), 'w', newline='') as f:
+        w = csv.writer(f, lineterminator='\n'); w.writerow(['k', 's(k)'])
         for kk in ks: w.writerow([kk, (-mu2 - tau*kk**2 - kap*kk**4)/K])
-    with open(os.path.join(RESULTS, 'driven_profile.csv'), 'w', newline='') as f:
-        w = csv.writer(f); w.writerow(['x', 'u'])
+    with open(os.path.join(outdir, 'driven_profile.csv'), 'w', newline='') as f:
+        w = csv.writer(f, lineterminator='\n'); w.writerow(['x', 'u'])
         for i in range(0, len(r['x']), 4): w.writerow([r['x'][i], r['u'][i]])
     print("\nCSV: results/driven_phase_diagram.csv, driven_dispersion.csv, driven_profile.csv")
     return dict(verdict=verdict, w=eos['w'], kstar=lp['kstar'], band=band)

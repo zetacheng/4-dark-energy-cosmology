@@ -10,11 +10,11 @@ Regressions A-E ; pre-registered verdict.
 Same 4-ball regulator/normalization discipline as C2a / Fierz / omega gates.
 """
 import numpy as np
-import os, sys, csv
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from fierz_verify import g, g5
+import os, csv
+from .fierz_verify import g, g5
 
-RESULTS = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'results')
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+REGEN = os.path.join(REPO_ROOT, 'results', 'de-interface-wrinkle', 'regen')
 GM = [g[1], g[2], g[3], g[4]]
 G5 = g5.astype(complex)
 I4 = np.eye(4, dtype=complex)
@@ -104,7 +104,9 @@ def volovik_audit():
 
 def hline(): print("-"*72)
 
-def main():
+def main(outdir=None):
+    outdir = REGEN if outdir is None else outdir
+    os.makedirs(outdir, exist_ok=True)
     print("="*72)
     print("DE-INTERFACE WRINKLE GATE — collective interface mode as DM seed?")
     print("="*72)
@@ -201,14 +203,14 @@ def main():
     print("#"*72)
 
     # -------- CSV --------
-    with open(os.path.join(RESULTS, 'dewrinkle_kernel.csv'), 'w', newline='') as f:
-        w = csv.writer(f); w.writerow(['Lambda', 'Q', 'Pi_S', 'Pi_P', 'Pi_S_minus_Pi_P'])
+    with open(os.path.join(outdir, 'dewrinkle_kernel.csv'), 'w', newline='') as f:
+        w = csv.writer(f, lineterminator='\n'); w.writerow(['Lambda', 'Q', 'Pi_S', 'Pi_P', 'Pi_S_minus_Pi_P'])
         for Lam in (1.0, 2.0):
             r = res[Lam]
             for i, Q in enumerate(r['Qs']):
                 w.writerow([Lam, Q, r['PS'][i], r['PP'][i], r['PS'][i]-r['PP'][i]])
-    with open(os.path.join(RESULTS, 'dewrinkle_sigma.csv'), 'w', newline='') as f:
-        w = csv.writer(f); w.writerow(['Lambda', 'K_t', 'c_4', 'm_sigma', 'm_sigma_over_mdyn', 'xi_Lambda'])
+    with open(os.path.join(outdir, 'dewrinkle_sigma.csv'), 'w', newline='') as f:
+        w = csv.writer(f, lineterminator='\n'); w.writerow(['Lambda', 'K_t', 'c_4', 'm_sigma', 'm_sigma_over_mdyn', 'xi_Lambda'])
         for Lam in (1.0, 2.0):
             r = res[Lam]; w.writerow([Lam, r['Kt'], r['c4'], r['msig'], r['msig']/m, r['xiLam']])
     print("\nCSV: results/dewrinkle_kernel.csv, results/dewrinkle_sigma.csv")
