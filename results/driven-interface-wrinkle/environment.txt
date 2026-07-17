@@ -1,0 +1,16 @@
+Legacy execution environment: NOT RECORDED IN SOURCE ARTIFACTS
+  (the kappa-c2a raw CSVs carry CRLF line endings, indicating a Windows
+   producer, but no Python/library versions were recorded in the source.)
+
+Verification environment (where these scripts were re-run bare during migration):
+Python: 3.11.15
+NumPy: 2.4.6
+SciPy: 1.17.1
+SymPy: 1.14.0
+Platform: Linux-6.18.5-x86_64-with-glibc2.39
+Verification date: 2026-07-17
+
+Source repository: zetacheng/kappa-c2a
+Source branch: driven-interface-wrinkle
+Source HEAD commit: 2a80c9db07654c51978891f6bac4a9518ea8a6dd
+Destination branch: sync/legacy-de-migration

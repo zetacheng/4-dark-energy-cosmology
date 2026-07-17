@@ -1,0 +1,17 @@
+{
+  "source_repository": "zetacheng/kappa-c2a",
+  "source_branch": "wrinkle-bound-excitation",
+  "source_commit": "17c187df09966e2a89bb73489d5cdd121ade3f21",
+  "model_status": "spectral bound-state test; wrinkle imported from the driven-interface EFT; new chi is an EFT control",
+  "units": {"m_dyn": 1.0},
+  "operating_point": {"dm_fermion_well": 0.6, "U0_scalar_well": 0.4, "R": 4},
+  "grids": {"kg_N": [4000, 8000], "box_rmax": [40, 80], "dirac_N": [1200, 6000]},
+  "headline": {
+    "fermion_E0": 0.5589,
+    "scalar_E0": 0.9718,
+    "scalar_xi_loc": 4.24,
+    "U0_crit_R2": [2.79, 2.90, 3.15],
+    "w_X": 0.028,
+    "flat_n_localized": 0
+  }
+}

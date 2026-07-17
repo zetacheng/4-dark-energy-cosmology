@@ -1,0 +1,4 @@
+# Immutable migrated raw artifacts are byte-identical to their kappa-c2a
+# originals (some were written on Windows and carry CRLF). Never let git
+# normalize their line endings.
+results/**/raw/** -text

@@ -1,0 +1,19 @@
+{
+  "source_repository": "zetacheng/kappa-c2a",
+  "source_branch": "driven-interface-wrinkle",
+  "source_commit": "2a80c9db07654c51978891f6bac4a9518ea8a6dd",
+  "model_status": "driven-dissipative EFT (generalized Swift-Hohenberg); NOT derived from the committed action",
+  "operating_point": {"mu_eff2": -0.02, "tau_eff": -0.30, "kappa_eff": 1.0, "K": 1.0, "lambda": 1.0},
+  "phase_scan_points": 15,
+  "grid_N_1d": 1024,
+  "grid_N_2d": 128,
+  "seeds": {"etd1": 1, "fd": 1, "twod": 3},
+  "headline": {
+    "k_star_over_Lambda": 0.3873,
+    "s_max": 0.0425,
+    "A_saturated": 0.2381,
+    "w_static": -0.338,
+    "w_pure_gradient": -0.3333,
+    "cold_DM_like_fraction": "0/15"
+  }
+}

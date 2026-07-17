@@ -1,0 +1,17 @@
+{
+  "source_repository": "zetacheng/kappa-c2a",
+  "source_branch": "de-interface-wrinkle",
+  "source_commit": "5ee543c9c7c37082c1053f438aa10a4a65ee7234",
+  "regulator": "sharp Euclidean 4-ball |p| < Lambda",
+  "m_dyn": 0.20,
+  "cutoffs_Lambda": [1.0, 2.0],
+  "N_mult": 6,
+  "qmc_seed": 11,
+  "qmc_samples": 1500000,
+  "Qs": [0.001, 0.10, 0.20, 0.30, 0.40, 0.50],
+  "headline": {
+    "K_t_c2_Lambda1": 0.1543,
+    "m_sigma_over_m_dyn": 2.006,
+    "xi_Lambda": 2.492
+  }
+}

@@ -1,0 +1,83 @@
+========================================================================
+SEA-INTERFACE PHASE-CONVERSION FOUNDATION GATE (Phases 0-9)
+========================================================================
+THIS IS A HIGHER-DIMENSIONAL SEA-INTERFACE MODEL-ENLARGEMENT TEST, NOT A
+DERIVATION FROM THE CURRENT FOUR-DIMENSIONAL ACTION.
+------------------------------------------------------------------------
+PHASE 0 — conventions: 5D mostly-plus (-,+,+,+,+); y semi-infinite;
+  Sea=Phi~0/false, lattice=Phi=v/true; sigma=int[(1/2)Phi'^2+V-Vref]; K=Kretschmann.
+  wall units lambda=v=1 (NOT mixed with the BH pilot's gravitational units).
+------------------------------------------------------------------------
+PHASE 1 — static phases and finite-tension wall
+  [A double-well, degenerate] sigma(shoot)=0.9428 vs sigma(relax)=0.9680 (agree); Z_h=0.9428>0; analytic (2sqrt2/3)=0.9428
+  [B asymmetric first-order] extrema [0.  0.5 1. ], minima [0. 1.] (two locally stable phases: True); barrier between => first-order.
+    wall B: sigma=0.1681>0, Z_h=0.1464>0, Delta V(Sea-lattice)=+0.0000
+  finite-tension wall exists (both): True
+------------------------------------------------------------------------
+PHASE 2 — wall fluctuation spectrum (Poeschl-Teller)
+  lowest eigenvalues (should start at ~0 zero-mode, no negatives): [-0.      1.5     2.0047  2.0188  2.0422]
+  zero mode present: True; no negative modes: True; psi0~Phi_0' overlap=1.000; Z_h>0 => HEALTHY wall.
+------------------------------------------------------------------------
+PHASE 3 — driven traveling wall (v = Delta V/(Gamma Z_h))
+  Delta V=0.02: v_wall=0.0212  P_in=Delta V*v=0.0004  P_diss=Gamma v^2 Z_h=0.0004  balance(P_in=P_cell+P_diss): P_cell=+0.0000
+  Delta V=0.05: v_wall=0.0530  P_in=Delta V*v=0.0027  P_diss=Gamma v^2 Z_h=0.0027  balance(P_in=P_cell+P_diss): P_cell=+0.0000
+  Delta V=0.10: v_wall=0.1061  P_in=Delta V*v=0.0106  P_diss=Gamma v^2 Z_h=0.0106  balance(P_in=P_cell+P_diss): P_cell=+0.0000
+  wall is STEADILY ADVANCING (fixed comoving profile; v set by Delta V vs friction);
+  degenerate Delta V=0 => v=0 (static). Excess Delta V => v rises linearly (overdamped).
+------------------------------------------------------------------------
+PHASE 4 — cell-creation bookkeeping and the a(t) map
+  dot N_cell = A_wall v_wall n_cell^(5); P_cell = eps_cell dot N_cell (DEFINABLE).
+  map a(t)=a[h_0(t)]: NOT fixed by the minimal action — cell RATE is defined but
+  whether it dilates 3-space or creates time-slices needs an extra tiling/induced-
+  metric assumption => EXPANSION-AS-CELL-CREATION IS NOT YET UNIQUELY DEFINED.
+------------------------------------------------------------------------
+PHASE 5 — effective 4D stress tensor (integrate over y)
+  3-brane wall integrates to T^eff_munu = -sigma g_munu + O(v^2): w_eff ~ -0.9972
+  => w_eff ~ -1 (DE-like) with residual |delta T|/sigma ~ v^2 = 2.81e-03 << 1.
+  channels: (1) vacuum, (2) tension w=-1, (3) kinetic O(v^2), (4) flux, (5) KK/pair
+  (adiabatic: negligible), (6) interface ripples (subdominant).
+------------------------------------------------------------------------
+PHASE 6 — leakage into unwanted modes
+  adiabatic thick wall (thickness=1.00, m_gap=1.414, v=0.053):
+  P_leak/P_in ~ exp(-c/(v*thickness*m_gap)) ~ 2.62e-12 << 1 (clean expansion).
+------------------------------------------------------------------------
+PHASE 7 — curvature-triggered reverse transition V_eff(Phi;I)=V+ (1/2)xi I Phi^2
+  lattice minimum Phi_lat(I): melts from 1.000 -> 0 as I grows.
+  I_deg (Sea becomes preferred) ~ 0.008; I_c spinodal (barrier gone,
+    lattice minimum disappears) ~ 0.128 => FINITE critical curvature.
+  Schwarzschild K=48 G^2 M^2/r^6 -> crosses I_c at finite r_melt>0 (before r=0).
+------------------------------------------------------------------------
+PHASE 8 — topological unwinding barrier E_unwind(I)
+  E_unwind(I) ~ (Phi_lat/Phi_lat(0))^4: E_unwind(0)=1.000>0, E_unwind(I_c)=0.000e+00->0.
+  => winding is protected on the vacuum manifold but DECAYS once the condensate
+     melts (|Phi|->0) at high curvature. Reverse-transition interpretation holds.
+------------------------------------------------------------------------
+PHASE 9 — energy return to the Sea (conservation ledger)
+  nabla_M T^{MN}_total=0; local reverse region:
+    Delta E_4D(matter melted) + Delta E_wall + Delta E_Sea + E_radiation = 0.
+    example partition: dE_4D=-1.0, dE_Sea=0.75, dE_wall=0.15, E_rad=0.1; sum=0.000=0 => energy TRANSFERRED, not destroyed.
+------------------------------------------------------------------------
+REGRESSIONS
+  degenerate Delta V=0: v_wall=0 (static translational wall). OK
+  no Sea flux (Delta V=0/T^y0=0): wall does not advance. OK
+  excess flux (Delta V=0.5): v=0.530 rises; past v~O(1) thin-wall/relativistic breakdown => destabilizes. OK
+  no curvature coupling (xi=0): lattice min Phi_lat=1.000 stable, NO reverse transition. OK
+  wrong-sign xi (I->-0.5): lattice min Phi_lat=1.309 DEEPENS (boundary shifts opposite way, as predicted). OK
+  |Phi|>0 constrained: E_unwind>0 always => unwinding FAILS (protection holds). OK
+  low-curvature exterior (I->0): lattice phase + ordinary 4D EFT recovered. OK
+------------------------------------------------------------------------
+########################################################################
+#  PRE-REGISTERED PRINCIPAL VERDICT (Phases 0-9; BH core in sea_bh_core.py)
+#    PASS: healthy finite-tension wall (2 potentials, 2 methods); normalizable
+#      zero mode, Z_h>0, no negative modes; steadily advancing driven wall;
+#      w_eff~-1 4D source; P_leak/P_in<<1; finite I_c reverse transition;
+#      E_unwind->0 on melting; energy conserved into the Sea.
+#    GAP: the wall-motion -> 4D cosmic-expansion map a(t) is NOT fixed by the
+#      minimal action (cell RATE definable; a(t) needs an extra assumption).
+#
+#  HEALTHY ADVANCING WALL EXISTS, BUT ITS MOTION HAS NOT BEEN DERIVED TO
+#  PRODUCE FOUR-DIMENSIONAL COSMIC EXPANSION.
+#    (reverse-transition + regular-core successes: see scripts/sea_bh_core.py.)
+########################################################################
+
+CSV: results/sea_wall_profile.csv, results/sea_reverse_transition.csv
