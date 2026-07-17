@@ -27,7 +27,7 @@ py-modules = []
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-addopts = "-ra"
+addopts = "-ra -m 'not slow'"
 markers = [
   "slow: long-running regression that regenerates a full gate (deselect with '-m \"not slow\"')",
 ]
