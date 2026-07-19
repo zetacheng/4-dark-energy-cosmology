@@ -29,17 +29,18 @@ imports **only** each branch's own gate content; the shared inherited base
 
 ## Paper source
 
-- [ ] latest Paper 4 source imported
+- [x] latest Paper 4 source imported
 - [ ] figures imported
-- [ ] bibliography imported
+- [x] bibliography imported (inline `thebibliography` in the source)
 
-The PI-supplied `paper4_dark_energy_v6_3.tex` was **not available** to this
-migration: it is not present on any of the four audited legacy branches, on
-`kappa-c2a/main`, or in the destination repository. The paper is therefore
-recorded as **version v6.3, source pending**; `PROGRESS.md` and `CLAIMS.md`
-carry the version and section-topic references, but no `.tex`, figures, or
-bibliography have been imported. This gap is left honestly unticked; it must be
-closed by the PI supplying the source before any claim is promoted.
+The PI has supplied `paper4_dark_energy_v6_3.tex`; it is imported under `paper/`
+and verified against this branch's record on import (not edited): it references
+the same terminated-chain result the gates record — `kappa_U = -0.00149` (exact
+`-17/(1152 pi^2)`), `S_mono = 640 kappa_U = -0.95` outside `[140, 550]`, "the
+chain terminates by its pre-registered criterion" — and is a self-contained
+LaTeX document (`\end{document}` present, braces balanced). The bibliography is
+carried inline in the source. **Bundled figures were not supplied**
+(`paper/figures/` is empty); that box remains honestly unticked.
 
 ## Scientific record
 
@@ -152,8 +153,8 @@ or vector-sector claim is asserted in this repository. Owner of record:
 
 ## Unresolved review items
 
-- The PI-supplied `paper4_dark_energy_v6_3.tex`, its figures, and bibliography
-  are not yet available; the paper source import is unticked.
+- The v6.3 source (`paper4_dark_energy_v6_3.tex`, with an inline bibliography) is
+  imported; only bundled **figures** were not supplied (`paper/figures/` empty).
 - Independent Claude review and PI acceptance are **pending** for every gate;
   no gate is closed and no claim is `VERIFIED`.
 - The two DM-candidate cross-repo items (1, 2 above) require Paper 1 ownership
@@ -168,7 +169,7 @@ or vector-sector claim is asserted in this repository. Owner of record:
   verdicts): complete and byte-identical.
 - Claim ledger and gate registry: complete; nothing `VERIFIED`.
 - Terminated monopole chain: recorded with its cross-repo dependency.
-- Paper v6.3 `.tex`, figures, bibliography: pending PI supply.
+- Paper v6.3 `.tex` and inline bibliography: imported; bundled figures not supplied.
 - Independent review and PI acceptance: pending — this branch is the reviewer's
   first checkpoint.
 - DM-candidate framing and `topo-mass-radius`: intentionally not claimed here;

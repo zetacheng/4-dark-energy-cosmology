@@ -8,9 +8,10 @@ Paper 4 — Dark Energy, Sea–Interface Dynamics and Cosmology.
 
 v6.3.
 
-The PI-supplied `paper4_dark_energy_v6_3.tex` source, figures, and bibliography
-were not available to the migration; the version is recorded, the source import
-is pending (see `MIGRATION.md`).
+The PI-supplied `paper4_dark_energy_v6_3.tex` is imported under `paper/` and was
+verified against the branch's record on import (terminated-chain result,
+`kappa_U`, self-contained LaTeX). Bundled figures were not supplied
+(`paper/figures/` is empty); the references are carried inline in the source.
 
 ## Current scientific status
 
@@ -49,7 +50,7 @@ Independent reviewer verification of this migration branch.
 
 ## Blocked items
 
-- PI-supplied `paper4_dark_energy_v6_3.tex`, figures, and bibliography.
+- Bundled figures for v6.3 (not supplied; `paper/figures/` empty).
 - Cross-repo (Paper 1) review of the dark-matter framing of the interface gates.
 
 ## Next administrative action
