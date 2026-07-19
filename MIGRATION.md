@@ -155,22 +155,24 @@ or vector-sector claim is asserted in this repository. Owner of record:
 
 - The v6.3 source (`paper4_dark_energy_v6_3.tex`, with an inline bibliography) is
   imported; only bundled **figures** were not supplied (`paper/figures/` empty).
-- Independent Claude review and PI acceptance are **pending** for every gate;
-  no gate is closed and no claim is `VERIFIED`.
+- Independent Claude review is **landed and the migration accepted**
+  (`reviews/claude/2026-07-19-de-migration.md`, `DECISION_LOG.md` 2026-07-19);
+  statuses stand as migrated and no claim is `VERIFIED` (first reviewer record
+  here).
 - The two DM-candidate cross-repo items (1, 2 above) require Paper 1 ownership
   review.
 - `topo-mass-radius` requires Paper 5 ownership handling; not this repository's.
 
 ## Migration assessment
 
-`SCIENTIFIC RECORD MIGRATION COMPLETE — PAPER SOURCE AND INDEPENDENT REVIEW REMAIN OPEN.`
+`SCIENTIFIC RECORD MIGRATION COMPLETE — v6.3 SOURCE IMPORTED, REVIEW LANDED AND ACCEPTED.`
 
 - Four Paper-4 gate records (derivations, scripts, immutable outputs, verbatim
   verdicts): complete and byte-identical.
 - Claim ledger and gate registry: complete; nothing `VERIFIED`.
 - Terminated monopole chain: recorded with its cross-repo dependency.
 - Paper v6.3 `.tex` and inline bibliography: imported; bundled figures not supplied.
-- Independent review and PI acceptance: pending — this branch is the reviewer's
-  first checkpoint.
+- Independent review: landed and migration accepted 2026-07-19
+  (`reviews/claude/2026-07-19-de-migration.md`); nothing promoted to `VERIFIED`.
 - DM-candidate framing and `topo-mass-radius`: intentionally not claimed here;
   flagged as cross-repo items.

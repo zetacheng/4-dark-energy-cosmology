@@ -3,7 +3,9 @@
 ## Current task
 
 Migration of the Paper 4 scientific record from `zetacheng/kappa-c2a` onto
-`sync/legacy-de-migration`, complete and pushed for review.
+`sync/legacy-de-migration`: **reviewed, accepted, and the v6.3 source imported**
+(`reviews/claude/2026-07-19-de-migration.md`, `DECISION_LOG.md` 2026-07-19).
+Ready to merge to `main`.
 
 ## Scientific question
 
@@ -24,18 +26,24 @@ reinterpret any migrated number; every value is the historical record.
 
 ## Required next input
 
-**Reviewer verification of this branch** — the next item. An independent
-reviewer must check the byte-identity of the migrated artifacts, the verbatim
-verdicts in the gate registry, the claim-status/text agreement in the ledger,
-and the bare-invocation reproducibility of each script, then issue verdicts;
-after that, PI acceptance. Separately, the PI must supply
-`paper4_dark_energy_v6_3.tex` (source, figures, bibliography), and Paper 1 must
-review the dark-matter framing of the interface gates (cross-repo items in
-`MIGRATION.md`).
+The migration is reviewed and accepted and the v6.3 source is imported; **no item
+blocks the merge to `main`**. The remaining work is the open gates themselves,
+none blocking:
+
+- `P4-DEWRINKLE-01`, `P4-WRINKLE-EXC-01` — INCONCLUSIVE in-framework; would need
+  an added interface/coupling degree of freedom to close.
+- `P4-SEA-01` — the wall-motion → 4D expansion map (the binding gap) is
+  undefined; needs an extra tiling/induced-metric assumption.
+- `P4-DRIVEN-01` — closed negative for the dark-matter route (EFT-only).
+- `P4-MONOPOLE-01` — closed negative (kill-window fired).
+
+Separately (non-blocking): the PI may supply bundled figures for v6.3
+(`paper/figures/` empty), and Paper 1 owns the dark-matter framing of the
+interface gates (cross-repo items in `MIGRATION.md`).
 
 ## Expected Codex output
 
-None pending; the migration is delivered for review.
+None pending; the migration is reviewed, accepted, and ready to merge.
 
 ## Questions for ChatGPT
 
@@ -43,9 +51,9 @@ None.
 
 ## Questions for Claude
 
-Independent-review verdicts for `P4-DEWRINKLE-01`, `P4-DRIVEN-01`, `P4-SEA-01`,
-`P4-WRINKLE-EXC-01`, and `P4-MONOPOLE-01`, against their pre-registered kill
-criteria.
+None outstanding. The independent migration review is landed
+(`reviews/claude/2026-07-19-de-migration.md`): the migration is accepted, and
+the gate verdicts are recorded faithfully with nothing promoted to `VERIFIED`.
 
 ## Role handoff
 
