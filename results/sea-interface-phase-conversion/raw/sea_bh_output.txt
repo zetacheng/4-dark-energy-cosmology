@@ -1,0 +1,43 @@
+========================================================================
+SEA-INTERFACE GATE — Phases 10-12: REGULAR BLACK-HOLE CORE PILOT
+========================================================================
+------------------------------------------------------------------------
+PHASE 10 — static pilot metric + phase profile
+  f(r) = -2*G*M*r**2/(2*G*L**2*M + r**3) + 1
+  core   f(r->0) = 1 - r**2/L**2   (de Sitter: 1 - r^2/L^2)
+  exterior f(r->inf) = 4*G**2*L**2*M**2/r**4 - 2*G*M/r + 1   (Schwarzschild 1-2GM/r + O(1/r^4))
+  m(r) = M*r**3/(2*G*L**2*M + r**3)
+  rho_eff(r->0) = 3/(8*pi*G*L**2)  (FINITE => de Sitter core, condensate melted=Sea)
+  rho_eff(r->inf) -> 0 (lattice vacuum). Phase: Phi(0)->Phi_Sea, Phi(inf)->Phi_lattice.
+------------------------------------------------------------------------
+PHASE 10 gates — curvature invariants at the core (symbolic + numeric)
+  R (Ricci scalar)                r->0 : 12/L**2   (finite: True)
+  R_mn R^mn                       r->0 : 36/L**4   (finite: True)
+  K=R_mnrs R^mnrs (Kretschmann)   r->0 : 24/L**4   (finite: True)
+  numeric cross-check (G=M=L=1):
+    R: r=1e-4->12.00000, 1e-2->11.99998, 0.1->11.97902 (bounded)
+    Ric2: r=1e-4->36.00000, 1e-2->35.99987, 0.1->35.87427 (bounded)
+    K: r=1e-4->24.00000, 1e-2->23.99992, 0.1->23.91622 (bounded)
+------------------------------------------------------------------------
+PHASE 10 — radial geodesic completeness
+  f(0) = 1 (finite, regular center); (dr/dtau)^2 = E^2 - f(r).
+  proper time to reach core (E=1.2): tau=1.228 FINITE; core is de Sitter
+  (regular) so geodesics EXTEND THROUGH r=0 => geodesically complete.
+------------------------------------------------------------------------
+PHASE 11 — exterior GR recovery
+  f - (1-2GM/r) = 4*G**2*L**2*M**2/r**4  => leading correction O(1/r^4) (< O(1/r^{2+delta})).
+  Phi(r) -> Phi_lattice, ordinary 4D GR/Schwarzschild recovered at large r.
+------------------------------------------------------------------------
+PHASE 12 — information bookkeeping
+  ENERGY TRANSFER IS TRACKED; QUANTUM INFORMATION RECOVERY IS NOT ESTABLISHED.
+  Channels: bulk Sea excitations, wall d.o.f., outgoing radiation, inaccessible
+  Sea microstates. No unitarity/paradox claim.
+------------------------------------------------------------------------
+########################################################################
+#  REGULAR-CORE PILOT: PASS — finite R, R_mn^2, K at r=0 (de Sitter/Sea core);
+#  geodesically complete; Schwarzschild exterior with O(1/r^4) correction.
+#  (This is the reverse-transition endpoint; combined verdict in the main gate:
+#   the forward wall-motion -> cosmic-expansion map remains underived.)
+########################################################################
+
+CSV: results/sea_bh_core.csv

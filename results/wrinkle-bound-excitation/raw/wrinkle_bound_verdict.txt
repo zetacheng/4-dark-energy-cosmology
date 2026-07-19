@@ -1,0 +1,135 @@
+======================================================================
+WRINKLE-BOUND DARK-EXCITATION GATE — PASTE-READY VERDICT
+======================================================================
+Tests whether a driven wrinkle binds a localized dark state out of an EXISTING mode
+that has none on the flat interface. The wrinkle is the container; the trapped mode
+is the candidate. Prior driven-wrinkle result preserved (wrinkle EOS w~-1/3..-1/2).
+Derivation: derivation/wrinkle_bound_excitation.md
+Solver: scripts/wrinkle_bound_excitation.py  Raw: results/wrinkle_bound_output.txt
+CSV: results/wrinkle_bound_eigen.csv, wrinkle_threshold.csv, wrinkle_bound_profile.csv
+
+(1) MODEL-STATUS DECLARATION
+    THIS GATE TESTS WHETHER AN EXISTING MICROSCOPIC MODE BECOMES WRINKLE-BOUND. ANY
+    NEW CHI FIELD IS AN EFT ENLARGEMENT CONTROL, NOT AN IN-FRAMEWORK DERIVATION.
+    The committed action has no interface field and no sea-coupling; the wrinkle h is
+    imported from the accepted driven-interface EFT.
+
+(2) CANDIDATE-SECTOR AUDIT
+    A sigma (m=2 m_dyn), B pi (massless), C omega (massive), D fermion (m_dyn),
+    E chi (new). Driven wrinkle h has NO h*(operator) term in the action => NO
+    derived coupling to any committed mode. Only microscopic realization: identify
+    the wrinkle with a CONDENSATE mass-modulation m(x) (a sigma-background) — a
+    modeling identification, not a derivation from the driven-interface gate.
+
+(3) DERIVED WRINKLE COUPLINGS
+    to driven h: NONE (A-D) => NO IN-FRAMEWORK WRINKLE COUPLING IDENTIFIED.
+    under wrinkle==condensate: m(x)=m_dyn - dm*env(x) modifies the Dirac operator
+    (D) and the KG kernel (A) microscopically. chi (E): m_chi^2 - g_chi W[h] (EFT).
+
+(4) FLAT CONTINUUM THRESHOLDS
+    scalar/sigma: E_th = m ; fermion: E_th = m_dyn ; omega: E_th = M_omega.
+    (units m_dyn=1.)
+
+(5) FLAT LOCALIZED-STATE COUNT
+    scalar KG flat: lowest E^2=1.003 >= m^2 => n_localized=0.
+    Dirac flat: no in-gap level => n_localized=0.  (sector poles recovered.)
+
+(6) WRINKLE PROFILES TESTED
+    Gaussian well (localized envelope), tanh patch (finite wrinkle DOMAIN, flat
+    exterior — the mandatory principal test), widths R=2,4,8 (>=1/m_dyn: long-wave).
+    Profiles taken as backgrounds; amplitude/width/k from the driven-wrinkle range.
+
+(7) BOUND EIGENVALUES AND LOCALIZATION LENGTHS
+    fermion (condensate mass-well dm=0.6, R=4): E_0=0.5589 < m_dyn (bound);
+       squared/SUSY-QM and direct 1D Dirac agree to 1e-4.
+    scalar (KG well U0=0.4, R=4): E_0=0.9718 < m, xi_loc=4.24; FD & shooting agree.
+    finite domain (tanh patch, U0=0.6): E_0=0.8628 (localized, not a Bloch band).
+
+(8) CRITICAL WRINKLE THRESHOLD
+    U0_crit*R^2 = 2.79 (R=2), 2.90 (R=4), 3.15 (R=8): a nearly R-INDEPENDENT
+    GEOMETRIC threshold (~2.8-3.1 = 3D s-wave depth x width^2), NOT cutoff-tracking.
+    First state emerges above a finite, broad threshold (not free, not fine-tuned);
+    a wider (longer-wave) wrinkle binds with smaller depth.
+
+(9) POSITIVE NORM / TACHYON CHECKS
+    E_0^2 = 0.944 > 0 (NO tachyon; E_0^2<0 would be local condensation, excluded).
+    norm(psi) finite > 0 (positive-norm state). No ghost (KG/Dirac kernels healthy).
+
+(10) REGULATOR / GRID / METHOD COMPARISON
+    grid E0^2(N=4000)=0.94436 vs (N=8000)=0.94436 (3e-7); box rmax=40 vs 80 (3e-7).
+    scalar: FD vs shooting agree; fermion: SUSY-QM vs direct Dirac agree to 1e-4.
+
+(11) DECAY CHANNELS AND LIFETIME
+    Below-threshold state is spectrally stable vs one-particle escape. A finite
+    wrinkle domain leaks by tunnelling (exp-suppressed for xi_loc<<domain size).
+    Pion/pair channels: kinematically closed if E_0 below the relevant continua.
+    The state is tied to the wrinkle: if the (driven) wrinkle dissolves it follows
+    into the continuum. Classification: METASTABLE while the wrinkle is sustained;
+    FORCED-occupancy in the driven-off limit.
+
+(12) WRINKLE-OFF DISSOLUTION TEST
+    A_h -> 0 (U0: 0.6->0.28): E_0^2 -> m^2, xi_loc 2.6 -> 7.8 (delocalizes and
+    merges into the continuum). The central condition h->0 => E_0->E_th HOLDS.
+
+(13) OCCUPATION INTERPRETATION
+    flat n_localized=0; wrinkled n_localized>=1 (a genuine new localized state, the
+    strong condition). <X>=0 (no condensate) can coexist with n_X!=0. A bosonic
+    trapped mode could be occupied as quanta / coherent oscillation / pumped
+    occupation; a fermionic mode has Pauli-limited occupancy per level.
+
+(14) (rho_X, p_X, w_X, c_s^2)
+    weakly-bound quantum: E_0=0.972, KE=m-E_0=0.028, w_X ~ KE/m = 0.028 << 1,
+    c_s^2 ~ w_X << 1 => the TRAPPED MODE is MATTER-like (unlike the container).
+
+(15) SEPARATE WRINKLE AND BOUND-MODE STRESS
+    T = T_wrinkle (w~-1/3..-1/2, from the driven gate) + T_X (w_X~0). Active
+    gravitational mass rho+3p = rho(1+3w): container -> 0 (w=-1/3) or <0 (w<-1/3);
+    trapped mode -> rho_X > 0.
+
+(16) TOTAL MATTER-LIKE CLASSIFICATION
+    Matter-like source requires rho_X > |rho_wrinkle + 3 p_wrinkle|. For a SINGLE
+    quantum rho_X is small vs the extended container, so the combined coarse-grained
+    source is matter-like only for SUFFICIENT trapped occupation — OCCUPATION-
+    DEPENDENT, NOT established here for one quantum.
+
+(17) BARYON-ATTRACTION SIGN
+    A localized rho_X>0 gives a shallow attractive grav. well, but the negative-
+    pressure container competes; the sign of the COMBINED well is occupation-
+    dependent and NOT established for a single quantum.
+
+(18) REGRESSION RESULTS
+    flat h=0: no localized state (scalar & Dirac). OK.
+    A_h->0: E_0 -> threshold, delocalizes. OK.
+    wrong-sign (U0<0, barrier): no bound state. OK.
+    box/grid: E_0, xi_loc converged (3e-7). OK.
+    sector: sigma=2 m_dyn, fermion threshold=m_dyn, omega pole recovered on flat. OK.
+    chi control: reproduces the standard 3D finite-well threshold U0_crit*R^2~2.8. OK.
+    injection off: state follows the dissolving wrinkle into the continuum. OK.
+
+(19) PRE-REGISTERED PRINCIPAL VERDICT
+    +------------------------------------------------------------------+
+    |  WRINKLE-BOUND EXCITATION GATE INCONCLUSIVE:                      |
+    |  NO MICROSCOPIC COUPLING BETWEEN THE WRINKLE AND EXISTING MODES   |
+    |  HAS BEEN DERIVED.                                                |
+    +------------------------------------------------------------------+
+    The mechanism (attractive well binds a state above a finite geometric threshold;
+    scalar & fermion, two methods each; delocalizes as A_h->0; absent for flat/
+    wrong-sign) is robust and the bound mode is matter-like (w_X~0.03), BUT there is
+    NO derived coupling between the accepted DRIVEN wrinkle and any committed mode.
+    Under the wrinkle==condensate identification a mass-well would LOCALIZE AN
+    EXISTING FERMION (a trapped bulk particle, not a wrinkle-only excitation); a new
+    CHI is bindable only as an EFT-ONLY control.
+
+(20) ONE-SENTENCE STATUS
+    INCONCLUSIVE in-framework (no derived driven-wrinkle-to-mode coupling); the
+    spectral mechanism is sound and, under a condensate-modulation identification,
+    would localize an existing (matter-like) fermion rather than create a
+    wrinkle-only dark excitation, while a genuinely new bound state exists only as
+    an EFT enlargement (chi) — so nothing about cosmological dark matter is
+    established.
+
+----------------------------------------------------------------------
+SCOPE STOP: verdict emitted; no halo/SPARC/RAR/BTFR/relic/CMB/lensing/structure/
+  cosmology, no paper .tex. All prior branches preserved (topo-mass-radius,
+  de-interface-wrinkle, driven-interface-wrinkle, ...).
+======================================================================

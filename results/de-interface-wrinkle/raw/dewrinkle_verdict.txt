@@ -1,0 +1,125 @@
+======================================================================
+DE-INTERFACE WRINKLE GATE — PASTE-READY VERDICT
+======================================================================
+Hypothesis under test: dark matter = a nonuniform collective deformation
+q(x)=q_0+delta q(x) (or interface height h(x)) of the ~uniform equilibrium DE
+interface — NOT a B=1 skyrmion (that is the reclassified UNIT-WINDING BARYONIC
+SOLITON GATE, "cutoff-scale lattice lump", which does not test this hypothesis).
+Same 4-ball regulator discipline as C2a / Fierz / omega gates. No paper .tex.
+Derivation: derivation/de_interface_wrinkle.md
+Script: scripts/de_interface_wrinkle.py  Raw: results/dewrinkle_output.txt
+CSV: results/dewrinkle_kernel.csv, results/dewrinkle_sigma.csv
+
+(1) MICROSCOPIC DEFINITION OF THE INTERFACE VARIABLE
+    Phase-0 catalog of every candidate against {operator; symmetry; conserved;
+    independent of the heavy sigma; in the committed action}:
+      (1) condensate amplitude q~psibar psi : IS the radial sigma (NOT independent).
+      (2) Volovik conserved vacuum q        : ABSENT from the action.
+      (3) cell density / interface height h : ABSENT (positing it enlarges the model).
+      (4) internal-dimension / mu mode      : ABSENT (no extra dimension in the action).
+      (5) other composites (omega, pion)    : the massive omega and the Goldstone
+          pion (tested topological sector) — neither an interface thickness.
+    => No DISTINCT interface collective variable exists in the committed action.
+
+(2) EQUILIBRIUM CONDITION
+    For a hypothetical Volovik q: rho_grav(q)=epsilon(q)-q epsilon'(q); equilibrium
+    rho_grav(q_0)=0 SELF-TUNES q_0 (d rho_grav/dq = -q epsilon''(q)). The current
+    action contains NO such conserved q, so no such self-tuning equilibrium exists;
+    the only scalar equilibrium is the NJL gap dV/dm=0 fixing m_dyn (=> sigma).
+
+(3) INDUCED GRAVITATIONAL SOURCE (Paper-4 audit)
+    The induced Einstein source = FULL constituent vacuum energy epsilon(m,Lambda)
+    (~Lambda^4), NOT (epsilon - q epsilon'): there is no conserved q / Lagrange
+    multiplier to enforce the subtraction.
+    CLASSIFICATION: FULL VACUUM ENERGY SOURCES GRAVITY
+    => the deep-sea (Volovik) self-tuning explanation is NOT microscopically realized.
+
+(4) FULL QUADRATIC KERNEL (only available collective scalar = condensate S)
+    K_S(omega,k) = Pi_P(0) - Pi_S(q^2),  q^2 = omega^2 + k^2 (O(4) => relativistic).
+    Pi_{S,P}(q) = -N_mult Int Tr[V S(p) V S(p+q)], V = 1 (S) / i g5 (P).
+    Anchor identity: Pi_S - Pi_P = -8 N_mult m^2 L(q^2) < 0 (verified).
+
+(5) (K_t, m_q^2, c_2, c_4)   [Lambda=1, m_dyn=0.20; two independent implementations]
+    K_t = c_2 = -dPi_S/dq^2 = +0.1543  (> 0, NO GHOST)
+    m_q^2 ~ m_sigma^2 = +0.161 (> 0, homogeneously stable)
+    c_4 = -0.120   (irrelevant to stability: c_2>0 already => static min at k=0)
+    QMC-loop vs deterministic-quadrature Pi_S agree to 4.3e-4.
+
+(6) NONLOCAL KERNEL CONTRIBUTION
+    None beyond the relativistic bubble below the fermion threshold; for q^2>4m^2
+    the bubble develops the standard pair-production branch cut (an ordinary
+    microscopic imaginary part), not a soft long-range interface nonlocality.
+
+(7) REGULATOR / SYSTEMATIC TABLE
+    Lambda   K_t=c_2    m_sigma/m_dyn   xi*Lambda
+    1.0      +0.1543    2.006           2.49
+    2.0      +0.2609    1.982           2.52
+    m_sigma/m_dyn ~ 2 and xi*Lambda ~ 2.5 at BOTH cutoffs (regulator-stable);
+    QMC vs analytic agree <5.4e-4.
+
+(8) xi * Lambda
+    xi = 1/m_sigma ;  xi*Lambda = 1/(2 m_dyn/Lambda) ~ 2.49  (m=0.20)  < 3  MICROSCOPIC.
+    (m=0.10 would give ~5, still not the >=10 long-wavelength PASS; it tracks m_dyn.)
+
+(9) k_star/Lambda AND WRINKLE SCALE
+    c_2 = +0.154 > 0 => the static kernel minimum is at k=0; NO finite-k wrinkle
+    (no c_2<0). k_star = 0 ; no preferred wrinkle wavelength. N/A.
+
+(10) NONLINEAR COEFFICIENTS
+    N/A — no controlled finite-k instability to saturate (Phase 6 not reached).
+
+(11) NONUNIFORM SOLUTION TYPE
+    N/A — no wrinkle/lump/sheet/foam; the only nonuniform config of the available
+    scalar is a decaying sigma fluctuation (Compton length 1/m_sigma).
+
+(12) EXCESS ENERGY
+    N/A for a wrinkle. A localized sigma fluctuation carries positive gradient+mass
+    energy but relaxes to uniform (no metastable nonuniform state); it is not a
+    persistent gravitating DM structure.
+
+(13) EFFECTIVE PRESSURE AND SOUND SPEED
+    N/A (no wrinkle medium). The sigma is a relativistic massive scalar (c_s^2 ~ 1
+    for its own quanta), not a pressureless-matter interface.
+
+(14) BARYON TRAPPING POTENTIAL AND SIGN
+    N/A — Phase 8 requires a positive gravitating wrinkle source first; none exists.
+
+(15) REGRESSION RESULTS
+    A homogeneous limit delta q=0: equilibrium background, no spurious DM energy. OK.
+    B sigma separation: m_sigma = 2.01 m_dyn (textbook NJL) => the condensate
+      "interface" candidate IS the heavy radial sigma; long-wavelength hypothesis
+      FAILS for it (xi*Lambda<3). DECISIVE.
+    C cutoff variation: m_sigma/m_dyn ~ 2 and xi*Lambda ~ 2.5 at Lambda=1,2 — the
+      scale tracks m_dyn, not a Lambda-independent long length.
+    D no-sea coupling switch: there is NO microscopic sea<->interface coupling in the
+      action to switch off (corroborates absence of an interface sector).
+    E wrong-sign gradient: K_t=+0.154>0 healthy; -K_t<0 would be a ghost. Sign anchor OK.
+
+(16) PRE-REGISTERED PRINCIPAL VERDICT LINE
+    +------------------------------------------------------------------+
+    |  DE-INTERFACE WRINKLE GATE INCONCLUSIVE:                          |
+    |  NO MICROSCOPIC INTERFACE VARIABLE HAS BEEN IDENTIFIED.           |
+    +------------------------------------------------------------------+
+    Basis: the committed microscopic action supplies no DISTINCT, conserved,
+    Volovik-type interface collective variable — the only collective scalar is the
+    condensate amplitude, which IS the microscopic sigma (m_sigma=2 m_dyn,
+    xi*Lambda~2.5<3); a Volovik q, an interface height h, and an internal-dimension
+    mode are all ABSENT (positing any of them enlarges the model), and the induced
+    source couples to the full epsilon (no self-tuning). The gate cannot be closed
+    positively or negatively for a "wrinkle" until an interface degree of freedom is
+    ADDED to the microscopic theory and re-derived.
+
+(17) ONE-SENTENCE DARK-MATTER STATEMENT
+    What IS established: the current microscopic theory contains no long-wavelength
+    collective interface variable — its only collective scalar is the microscopic
+    sigma (m_sigma=2 m_dyn), and its induced gravity sees the full vacuum energy
+    with no Volovik self-tuning; what is NOT established: any healthy long-wavelength,
+    positive-energy, pressureless, baryon-trapping interface wrinkle, and therefore
+    NOTHING about cosmological dark matter — closing this hypothesis positively
+    requires explicitly enlarging the model with an interface field.
+
+----------------------------------------------------------------------
+SCOPE STOP: verdict emitted; no halo/SPARC/RAR/BTFR/relic/CMB/lensing/structure-
+  formation/cosmology and no paper .tex edits performed. The topo-mass-radius
+  branch (baryonic soliton audit) is preserved and untouched.
+======================================================================

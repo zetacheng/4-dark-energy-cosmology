@@ -10,7 +10,11 @@ readme = "README.md"
 requires-python = ">=3.11"
 license = { file = "LICENSE" }
 authors = [{ name = "Zeta Cheng" }]
-dependencies = []
+dependencies = [
+  "numpy>=1.26",
+  "scipy>=1.12",
+  "sympy>=1.12",
+]
 
 [project.optional-dependencies]
 dev = [
@@ -23,7 +27,10 @@ py-modules = []
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-addopts = "-ra"
+addopts = "-ra -m 'not slow'"
+markers = [
+  "slow: long-running regression that regenerates a full gate (deselect with '-m \"not slow\"')",
+]
 
 [tool.ruff]
 target-version = "py311"
@@ -31,3 +38,8 @@ line-length = 100
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "W"]
+
+[tool.ruff.lint.per-file-ignores]
+# Migrated legacy gate scripts are preserved as-run from kappa-c2a; they are not
+# restyled, because reformatting could perturb the historical numerical record.
+"scripts/*.py" = ["ALL"]

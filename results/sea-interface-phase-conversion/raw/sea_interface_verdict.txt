@@ -1,0 +1,134 @@
+======================================================================
+SEA-INTERFACE PHASE-CONVERSION FOUNDATION GATE — PASTE-READY VERDICT
+======================================================================
+Derivation: derivation/sea_interface_phase_conversion.md
+Solvers: scripts/sea_interface.py (Phases 0-9), scripts/sea_bh_core.py (10-12)
+Raw: results/sea_interface_output.txt, results/sea_bh_output.txt
+CSV: sea_wall_profile.csv, sea_reverse_transition.csv, sea_bh_core.csv
+
+(1) MODEL-STATUS DECLARATION
+    THIS IS A HIGHER-DIMENSIONAL SEA-INTERFACE MODEL-ENLARGEMENT TEST, NOT A
+    DERIVATION FROM THE CURRENT FOUR-DIMENSIONAL ACTION. The committed 4D action has
+    no Sea phase, extra coordinate, phase boundary, bulk-to-wall flux, or inverse
+    transition. All prior branches preserved and not reinterpreted.
+
+(2) CONVENTIONS AND DIMENSIONS
+    5D mostly-plus (-,+,+,+,+); x^M=(x^mu,y), y semi-infinite (Sea y->-inf, lattice
+    y->+inf). [Phi]=3/2, [M_5]=1; wall units lambda=v=1 (NOT mixed with the BH
+    pilot's gravitational units G,M,L). sigma=int[(1/2)Phi'^2+V-Vref]; invariants
+    R, R_mn R^mn, K=Kretschmann.
+
+(3) PARAMETER REGIONS WITH TWO PHASES
+    A tilted double well V=(lam/4)(Phi^2-v^2)^2+eps Phi: two minima +/-v for eps<eps_c.
+    B asymmetric V=a Phi^2-b Phi^3+c Phi^4 (a,b,c>0): extrema {0,0.5,1}, minima {0,1}
+    (Sea=0 false, lattice=1 true) with a barrier => genuine first-order, two locally
+    stable phases (V''>0 at both).
+
+(4) WALL PROFILE, THICKNESS, TENSION
+    BPS kink Phi_0=v tanh(k y), k=v sqrt(lam/2), thickness ~1/(sqrt(lam)v).
+    sigma_A: shooting/BPS 0.9428 = analytic (2sqrt2/3)sqrt(lam)v^3; relaxation 0.968
+    (agree ~3%). sigma_B=0.168>0. Both finite and POSITIVE.
+
+(5) FLUCTUATION SPECTRUM
+    H_wall=-d_y^2+V''(Phi_0): eigenvalues {~0, 1.5, 2.00, ...}: a translational ZERO
+    MODE (psi0~Phi_0', overlap 1.000, normalizable), NO negative modes, a bound shape
+    mode, continuum at m_gap^2=2. Z_h=int(Phi_0')^2=0.943>0. HEALTHY wall.
+
+(6) TRAVELING-WALL SOLUTION AND VELOCITY
+    v_wall = Delta V/(Gamma Z_h): Delta V=0.02,0.05,0.10 -> v=0.021,0.053,0.106.
+    Fixed comoving profile => STEADILY ADVANCING; Delta V=0 => v=0 (static).
+
+(7) FULL ENERGY-FLOW BALANCE
+    P_in=Delta V*v = P_diss=Gamma v^2 Z_h at steady state (dE_wall/dt=0); balance
+    P_in=P_cell+P_diss holds to machine precision. No runaway heating.
+
+(8) CELL-CREATION BOOKKEEPING
+    dot N_cell=A_wall v_wall n_cell^(5); P_cell=eps_cell dot N_cell (DEFINABLE). The
+    map a(t)=a[h_0(t)] is NOT uniquely fixed by the minimal action (cell RATE defined;
+    3-space dilation vs time-slice creation needs an extra tiling/induced-metric
+    assumption). => EXPANSION-AS-CELL-CREATION IS NOT YET DEFINED. [THE BINDING GAP]
+
+(9) EFFECTIVE 4D (rho, p, w)
+    3-brane wall integrates to T^eff_munu=-sigma g_munu+O(v^2): w_eff ~ -0.997 ~ -1
+    (DE-like), residual |delta T|/sigma ~ v^2 = 2.8e-3 << 1.
+
+(10) LEAKAGE FRACTIONS
+    adiabatic thick wall (thickness 1, m_gap sqrt2, v=0.053):
+    P_leak/P_in ~ exp(-c/(v*thickness*m_gap)) ~ 2.6e-12 << 1 (clean expansion). Scalar
+    radiation / KK / pair / anisotropic-stress channels all exp-suppressed.
+
+(11) CRITICAL CURVATURE / DENSITY
+    V_eff(Phi;I)=V+(1/2)xi I Phi^2 (I=Kretschmann K). Lattice minimum melts 1->0 as I
+    grows: I_deg(Sea preferred) ~ 0.008, I_c(spinodal, barrier gone) ~ 0.128 — FINITE.
+    Schwarzschild K=48 G^2 M^2/r^6 crosses I_c at finite r_melt>0 (before r=0).
+
+(12) REVERSE-TRANSITION PROFILE
+    Phi_lattice(I): continuous melt to Phi_Sea=0 by I_c (controlled, sub-spinodal
+    first-order then spinodal). Condensate reaches 0 BEFORE any invariant diverges.
+
+(13) TOPOLOGICAL-UNWINDING BARRIER
+    E_unwind(I) ~ (Phi_lat/Phi_lat(0))^4: E_unwind(0)=1>0, E_unwind(I_c)->0. Winding
+    protected on the vacuum manifold, DECAYS once |Phi|->0 at high curvature.
+
+(14) ENERGY RETURNED TO THE SEA
+    nabla_M T^{MN}=0; ledger Delta E_4D + Delta E_Sea + Delta E_wall + E_rad = 0
+    (e.g. -1 + 0.75 + 0.15 + 0.10 = 0). Melted 4D matter energy TRANSFERRED (bulk
+    Sea + wall + radiation), not destroyed.
+
+(15) BLACK-HOLE PILOT METRIC AND PHASE PROFILE
+    ds^2=-f dt^2+dr^2/f+r^2 dOmega^2, Hayward f=1-2GM r^2/(r^3+2GM L^2).
+    m(r)=M r^3/(r^3+2GM L^2); rho_eff(0)=3/(8 pi G L^2) FINITE (de Sitter/Sea core);
+    Phi(0)->Phi_Sea (melted), Phi(inf)->Phi_lattice.
+
+(16) CURVATURE INVARIANTS AT THE CORE
+    R(0)=12/L^2, R_mn R^mn(0)=36/L^4, K(0)=24/L^4 — ALL FINITE (symbolic AND numeric
+    agree: R->12, Ric2->36, K->24 for G=M=L=1). NO singularity.
+
+(17) GEODESIC-COMPLETENESS RESULT
+    f(0)=1 (regular center); (dr/dtau)^2=E^2-f(r); proper time to reach the core is
+    FINITE (tau=1.23 for E=1.2) and the de Sitter core is regular => radial geodesics
+    EXTEND THROUGH r=0. Geodesically complete.
+
+(18) EXTERIOR-GR DEVIATION
+    f-(1-2GM/r) = 4 G^2 L^2 M^2/r^4 => leading correction O(1/r^4) (< O(1/r^{2+delta})).
+    Phi->Phi_lattice, ordinary 4D Schwarzschild/GR recovered.
+
+(19) INFORMATION-BOOKKEEPING STATEMENT
+    ENERGY TRANSFER IS TRACKED; QUANTUM INFORMATION RECOVERY IS NOT ESTABLISHED.
+
+(20) REGRESSION RESULTS
+    degenerate Delta V=0 -> static wall (v=0). OK.
+    no Sea flux -> wall does not advance. OK.
+    excess flux (Delta V=0.5) -> v=0.53 rises, destabilizes past v~O(1). OK.
+    no curvature coupling (xi=0) -> lattice min stable, NO reverse transition. OK.
+    wrong-sign xi -> lattice min DEEPENS (boundary shifts opposite, as predicted). OK.
+    |Phi|>0 constrained -> E_unwind>0, unwinding FAILS (protection holds). OK.
+    low-curvature exterior -> lattice phase + ordinary 4D EFT recovered. OK.
+    (BH) curvature invariants symbolic vs numeric agree. OK.
+
+(21) PRE-REGISTERED PRINCIPAL VERDICT
+    +------------------------------------------------------------------+
+    |  HEALTHY ADVANCING WALL EXISTS, BUT ITS MOTION HAS NOT BEEN       |
+    |  DERIVED TO PRODUCE FOUR-DIMENSIONAL COSMIC EXPANSION.            |
+    +------------------------------------------------------------------+
+    9 of 10 sub-gates PASS as an EFT construction: healthy finite-tension wall (2
+    potentials, 2 methods); normalizable zero mode, Z_h>0, no negatives; steadily
+    advancing driven wall; w_eff~-1 4D source; P_leak/P_in~1e-12; finite critical
+    curvature I_c reverse transition; vanishing unwinding barrier on melting; energy
+    conserved into the Sea; regular de Sitter/Sea-phase BH core (finite R,R_mn^2,K),
+    geodesically complete, Schwarzschild exterior. The BINDING GAP is Phase 4: the
+    wall-motion -> 4D cosmic-expansion map a(t) is NOT fixed by the minimal action.
+
+(22) ONE-SENTENCE STATUS
+    As an explicit model enlargement the 5D action supports a healthy advancing
+    Sea->lattice wall, a curvature-triggered reverse transition that melts the
+    condensate (unwinding winding) and yields a regular finite-curvature,
+    geodesically-complete black-hole core with a Schwarzschild exterior; but the
+    minimal action does NOT derive the map from wall motion to four-dimensional
+    cosmic expansion, and nothing about cosmology, dark matter, black-hole
+    observations, or information recovery is established.
+
+----------------------------------------------------------------------
+SCOPE STOP: verdict emitted; no SPARC/halo/relic/CMB/lensing/BH-phenomenology/
+  information-recovery/cosmology, no paper .tex. All prior branches preserved.
+======================================================================

@@ -21,3 +21,6 @@ Thumbs.db
 .env
 .env.*
 !.env.example
+
+# Regeneration outputs (immutable archive lives in results/*/raw/)
+results/*/regen/

@@ -1,0 +1,83 @@
+========================================================================
+DRIVEN DE-INTERFACE WRINKLE GATE (Swift-Hohenberg EFT feasibility)
+========================================================================
+MODEL STATUS: EFT MODEL-ENLARGEMENT TEST, NOT A DERIVATION FROM THE CURRENT
+ACTION. No interface variable / sea-coupling exists in the committed action;
+h, Q, K, mu^2, tau_0, kappa, lambda, alpha_i, beta, and the dissipation K d_t u
+are ALL introduced EFT parameters (none derived).
+------------------------------------------------------------------------
+PHASE 1 — homogeneous background (bookkeeping only)
+  K dot H = F(Q_0,H); open continuity dot rho + 3H(rho+p)=Q_0.
+  quasi-constant rho_DE needs Q_0 ~ 3H(rho+p) (balance condition, not imposed).
+------------------------------------------------------------------------
+PHASE 2 — linear wrinkle instability
+  s(k) = -(mu_eff^2 + tau_eff k^2 + kappa_eff k^4)/K
+  mu_eff^2=-0.020  tau_eff=-0.300  kappa_eff=+1.000  K=1.0
+  finite-k band (tau_eff<0,kappa_eff>0, tau^2/4kap>mu^2): True
+  k_star=0.3873  k_star/Lambda=0.3873  s_max=+0.04250
+  condition tau_eff^2/4kappa_eff=0.0225 > mu_eff^2=-0.0200: True
+  wavelength class: cutoff-artifact (k*/Lam>0.2)
+------------------------------------------------------------------------
+PHASE 3 — nonlinear saturation (spectral 1D + independent FD cross-check)
+  saturated: A=0.2381  (single-mode predict A=sqrt(4K s_max/3lam)=0.2380)
+  dominant k_dom=0.3550 vs k_star=0.3873 (band-selected)
+  independent FD: A=0.2389  k_dom=0.3873  (spectral/FD agree on wavelength: True)
+  late-time pattern type: stationary periodic wrinkle (dissipative attractor).
+------------------------------------------------------------------------
+PHASE 5 — energy balance
+  wrinkle free energy density F = +1.44947e-03  (E_wrinkle > 0)
+  steady static attractor: u_dot->0 => P_inj=<dQ u_dot>->0=P_diss=<K u_dot^2>;
+  the drive holds mu_eff^2,tau_eff at their shifted values (maintenance, not power).
+------------------------------------------------------------------------
+PHASE 6 — effective stress and DM-like test (DECISIVE)
+  relativistic-scalar EOS of the STATIC pattern (no coherent oscillation):
+    rho=+1.9782e-03  p=-6.6806e-04  w=p/rho=-0.3377  (grad2=3.93e-03, V=+1.30e-05)
+    => w in [-1,-1/3]: DE-like/wall-like, NOT cold-DM-like (|w|<<1 FAILS).
+    c_s^2 ~ O(1) (relativistic modes), not <<1.
+------------------------------------------------------------------------
+PHASE 7 — baryon trapping pilot
+  premise (positive-energy MATTER-like wrinkle) already fails at Phase 6 (w<0);
+  a w<0 (tension) region does not gravitate as attracting cold matter. V_b minimum
+  inside the wrinkle NOT established (chronology gate not reachable).
+------------------------------------------------------------------------
+PHASE 8 — parameter-space scan (phase diagram)
+   mu_eff^2  tau_eff  band  k*/Lam w(static)            class
+     -0.020   -0.010     1   0.071     1.660        long-wave
+     -0.020   -0.050     1   0.158    -0.004     intermediate
+     -0.020   -0.200     1   0.316    -0.286      microscopic
+     -0.020   -0.800     1   0.632    -0.447      microscopic
+     -0.020    0.100     0     nan       nan    phase-sep/k=0
+      0.000   -0.010     1   0.071    -0.334        long-wave
+      0.000   -0.050     1   0.158    -0.343     intermediate
+      0.000   -0.200     1   0.316    -0.371      microscopic
+      0.000   -0.800     1   0.632    -0.461      microscopic
+      0.000    0.100     0     nan       nan             flat
+      0.020   -0.010     0   0.071       nan             flat
+      0.020   -0.050     0   0.158       nan             flat
+      0.020   -0.200     0   0.316       nan             flat
+      0.020   -0.800     1   0.632    -0.474      microscopic
+      0.020    0.100     0     nan       nan             flat
+  fraction with finite-k band: 9/15
+  fraction long-wave (k*/Lam<=0.1): 2/15  (needs |tau_eff|/kappa_eff<~0.02: TUNED)
+  fraction cold-DM-like (|w|<0.1): 0/15  => EMPTY: static pattern w~-1/3..-1
+------------------------------------------------------------------------
+REGRESSIONS
+  A no-injection (tau_eff=+0.3>0): band=False => interface FLATTENS. OK
+  B no curvature feedback (alpha2=alpha4=0 => tau_eff=tau_0>0): band=False => homogeneous injection alone gives NO wrinkle. OK
+  C no bending (kappa_eff->0, tau_eff<0): s(k)~-tau k^2/K grows unbounded in k => negative tension RUNS TO CUTOFF (unhealthy). OK
+  D positive tension (tau_eff=+0.2): band=False => all finite-k decay. OK
+  E no saturation (lambda=0): unstable band grows without bound (leaves EFT). OK
+  F grid independence: k_dom(N=512)=0.4115 k_dom(N=2048)=0.3873 (grid-independent: True); k_star set by tau,kappa not dx. OK
+------------------------------------------------------------------------
+########################################################################
+#  PRE-REGISTERED PRINCIPAL VERDICT
+#    finite-k band: True ; k_star/Lambda=0.387 (long-wave needs tuning);
+#    E_wrinkle>0: True ; static EOS w=-0.338 in [-1,-1/3] => NOT cold-DM-like;
+#    model status: EFT enlargement (nothing derived from the committed action).
+#
+#  DRIVEN WRINKLE EXISTS BUT IS NOT DARK-MATTER-LIKE
+#    (standing caveat: DRIVEN WRINKLE EFT IS VIABLE, BUT NO MICROSCOPIC
+#     SEA-INTERFACE COUPLING HAS BEEN DERIVED.)
+########################################################################
+
+CSV: results/driven_phase_diagram.csv, driven_dispersion.csv, driven_profile.csv

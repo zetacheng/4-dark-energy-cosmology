@@ -1,0 +1,75 @@
+completeness (hermitian orthonormal basis): True
+paper basis (Gamma^A = Gamma_A) equals completeness delta: False
+paper-basis tr[Gamma_A Gamma_A]/4 per channel: {'S': np.float64(1.0), 'P_ig5': np.float64(-1.0)} V: 1.0 A(gg5): -1.0 T: 1.0
+
+Fierz exchange matrix F (rows: source channel sum; cols: coefficient per member of target channel)
+channels: ['S', 'P', 'V', 'A', 'T']
+[[ 0.25  0.25  0.25  0.25  0.25]
+ [ 0.25  0.25 -0.25 -0.25  0.25]
+ [ 1.   -1.   -0.5   0.5   0.  ]
+ [ 1.   -1.    0.5  -0.5   0.  ]
+ [ 1.5   1.5   0.    0.   -0.5 ]]
+========================================================================
+DE-INTERFACE WRINKLE GATE — collective interface mode as DM seed?
+========================================================================
+PHASE 0 — is there a DISTINCT microscopic interface variable?
+  candidate                                sym            cons   indep sigma            in-action
+  (1) condensate amplitude  q~psibar psi   chiral(broken) no     NO = sigma             YES (=sigma)
+  (2) Volovik conserved vacuum q           shift/none     yes    would-be               NO (absent)
+  (3) cell density / height h(x)           translation    cell#  -                      NO (enlarges model)
+  (4) internal-dim / mu mode               translation    -      -                      NO (no extra dim)
+  (5) other composite (omega, pion)        U(1)_V / chiral omega:Q omega heavy; pion=phase YES but characterized
+  => only collective SCALAR present is (1)=condensate amplitude=sigma;
+     (2),(3),(4) are ABSENT from the committed action (positing them enlarges it).
+------------------------------------------------------------------------
+PHASE 1 — equilibrium & induced-source (Volovik / Paper-4) audit
+  hypothetical Volovik q: rho_grav(q) = epsilon(q) - q epsilon'(q)
+  d rho_grav/dq = -q*Derivative(epsilon(q), (q, 2))   => equilibrium rho_grav(q_0)=0 self-tunes q_0
+  AUDIT of current action: induced Einstein source = FULL epsilon(m,Lambda)
+  (constituent vacuum energy ~Lambda^4); NO conserved q, NO (epsilon - q epsilon')
+  subtraction. CLASSIFICATION: FULL VACUUM ENERGY SOURCES GRAVITY
+  => Volovik self-tuning (deep-sea) subtraction NOT microscopically realized.
+------------------------------------------------------------------------
+PHASE 2 — quadratic kernel of the only collective scalar (condensate)
+  Lambda=1.0: K_t=c_2=+0.1543  c_4=-0.1196  m_sigma=0.4012=2.006 m_dyn  xi*Lam=1/m_sig=2.492
+           QMC vs analytic Pi_S max-rel=4.33e-04 (independent impls agree)
+  Lambda=2.0: K_t=c_2=+0.2609  c_4=-0.1284  m_sigma=0.3965=1.982 m_dyn  xi*Lam=1/m_sig=2.522
+           QMC vs analytic Pi_S max-rel=5.34e-04 (independent impls agree)
+  identity Pi_S-Pi_P = -8 N_mult m^2 L(q^2) < 0 (trace num. 8m^2; -N_mult flips): [-0.028  -0.0275 -0.0261 -0.0242 -0.022  -0.0197]
+------------------------------------------------------------------------
+PHASE 3 — health gates (on the condensate scalar)
+  K_t = c_2 = -dPi_S/dq^2 = +0.1543  (> 0  NO GHOST)
+  m_q^2 ~ m_sigma^2 = +0.1610 > 0 (homogeneously stable)
+  static kernel K(0,k)=A0+c_2 k^2+..., c_2=+0.1543>0 => minimum at k=0;
+     NO c_2<0 finite-k wrinkle (relativistic O(4) kernel, K_t=c_2).
+------------------------------------------------------------------------
+PHASE 4 — correlation length gate
+  Lambda=1.0: xi*Lambda = 1/m_sigma = 2.492  => MICROSCOPIC <3
+  Lambda=2.0: xi*Lambda = 1/m_sigma = 2.522  => MICROSCOPIC <3
+  => xi*Lambda ~ 2.5 (m=0.2) < 3: the condensate mode is MICROSCOPIC
+     (Compton length of the sigma), NOT a long-wavelength interface.
+------------------------------------------------------------------------
+REGRESSIONS
+  A homogeneous limit delta q=0: equilibrium background, no spurious DM energy. OK
+  B sigma separation: m_sigma=2.006 m_dyn (~2 m_dyn, textbook NJL) =>
+    the condensate 'interface' candidate IS the heavy radial sigma. Hypothesis
+    fails for it (mode is microscopic, xi*Lam<3).
+  C cutoff variation: m_sigma tracks m_dyn (2.0 m at both Lambda); xi~1/m_sigma
+    tracks the microscopic scale, not a Lambda-independent long length.
+  D no-sea coupling switch: NO microscopic sea<->interface coupling exists in the
+    action to switch off (corroborates absence of an interface sector).
+  E wrong-sign gradient: flipping K_t (or c_2) sign => ghost/gradient-unstable
+    (K_t=+0.1543 > 0 healthy; -K_t < 0 would be a ghost). Code-sign anchor OK.
+------------------------------------------------------------------------
+########################################################################
+#  PRE-REGISTERED PRINCIPAL VERDICT
+#    Phase-0: no DISTINCT microscopic interface variable in the committed action
+#    (candidate 1 = the microscopic sigma, m_sigma=2 m_dyn, xi*Lam~2.5<3;
+#     candidates 2,3,4 absent — positing them enlarges the model). Induced
+#     source couples to the FULL epsilon (no Volovik self-tuning).
+#
+#  DE-INTERFACE WRINKLE GATE INCONCLUSIVE:
+#  NO MICROSCOPIC INTERFACE VARIABLE HAS BEEN IDENTIFIED.
+########################################################################
+
+CSV: results/dewrinkle_kernel.csv, results/dewrinkle_sigma.csv

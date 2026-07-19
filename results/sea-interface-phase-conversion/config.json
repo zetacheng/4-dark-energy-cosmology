@@ -1,0 +1,22 @@
+{
+  "source_repository": "zetacheng/kappa-c2a",
+  "source_branch": "sea-interface-phase-conversion",
+  "source_commit": "1cd94b5dde72745006b3fec67b40b227fd8eaacb",
+  "model_status": "5D Sea-interface model enlargement; NOT derived from the committed 4D action",
+  "wall_units": {"lambda": 1.0, "v": 1.0},
+  "bh_pilot_units": {"G": 1.0, "M": 1.0, "L": 1.0},
+  "metric_5d_signature": "mostly-plus (-,+,+,+,+)",
+  "headline": {
+    "sigma_A_bps": 0.9428,
+    "sigma_B": 0.168,
+    "Z_h": 0.943,
+    "w_eff": -0.997,
+    "P_leak_over_P_in": 2.6e-12,
+    "I_c_spinodal": 0.128,
+    "R0_deSitter": 12.0,
+    "Ric2_0": 36.0,
+    "Kretschmann_0": 24.0,
+    "subgates_pass_as_EFT": "9 of 10",
+    "tenth_subgate": "wall-motion -> 4D cosmic-expansion map a(t): NOT DEFINED by the minimal action (the binding gap)"
+  }
+}
