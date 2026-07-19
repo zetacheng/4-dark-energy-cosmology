@@ -1,0 +1,1019 @@
+% ===================================================================
+% Paper 4, v5.5 (2026-07)
+% Dark energy as the instanton residual of the condensate's angular
+% mode. Solve-oriented A+B construction: scheme-separated floor +
+% surviving field-dependent residual; dimensional-transmutation scale;
+% thawing PNGB quintessence; unification with the galactic
+% acceleration scale a0 ~ Lambda_DE^2 / M_Pl (MOND-Lambda coincidence).
+% v5.3: central computation re-scoped (fermion-kernel index excluded).
+% v5.5: single-condensate decay-constant fix; third chi_top candidate
+% (eta-Hopf, Paper 5 S2-3) registered; version labels synced.
+% v5.6: (i) mediator-gap section added (parity theorem + two computed
+% negative results close the loop-level routes; topological funnel);
+% (ii) smooth-field Hopf density proven identically zero (pullback
+% theorem, machine-sealed); eta-Hopf candidate re-scoped to the
+% MONOPOLE sector of the orientation layer; (iii) monopole viability
+% gate PASSED: measured Skyrme band brackets the required loop action
+% S ~ 276; S2-2 co-resolved (Coulomb phase); (iv) f/M_Pl thawing link
+% recorded; (v) erratum: b0 g^2 ~ 0.29 (not ~1) for S = 276.
+% v5.7: MAGI round 1 (ChatGPT) corrections: (i) 3+1D vs 2+1D
+% compact-U(1) physics fixed -- Coulomb phase has an EXACTLY massless
+% photon (Guth); "Polyakov-class mass" phrasing removed; correction
+% propagates to Paper 5 gate S2-2 (restated as a phase question,
+% answered on the Coulomb side); (ii) gate claim scoped: monopole
+% DILUTENESS scale passes; chi_top itself awaits linked/twisted-loop
+% computation (C2b).
+% v5.8: abstract trimmed to arXiv limit (1888 chars, was 3669); the
+% displaced technical statements already live in Secs. 2, 7, 8.
+% Review process: per-version review = Claude + ChatGPT; fresh-session
+% re-review before submission.
+% v6.0: MAJOR REVISION following the C2a measurement.
+% (1) C2a executed: first chirally complete kappa_U measurement
+% (pointwise A0=0 to machine precision, five diagram classes, two
+% evaluators, two integrators): kappa_U = -0.00149(1) -- 97x below the
+% required 0.144 and of opposite sign. S_mono = -0.95, outside
+% [140,550]: THE TRANSMUTATION/MONOPOLE CHAIN TERMINATES by its
+% pre-registered criterion. v5.6-5.8 viability-gate claims (beta band,
+% Coulomb co-resolution) RETRACTED -- they rested on a fit-leakage
+% artifact in the July-8 kappa numbers.
+% (2) Ontology repositioned on the author's ground: internal-dimension
+% energy reservoir ('the sea'), lattice vacuum as its surface.
+% (3) New candidate answer for CC smallness: Volovik equilibrium
+% argument (self-sustained condensate => zero vacuum pressure; only
+% deviations gravitate), with its known weakness stated; NEW CENTRAL
+% COMPUTATION registered: audit of the induced Einstein equations'
+% source term in the companion gravity paper's machinery.
+% (4) Outlook (picture, not derivation): expansion as lattice
+% accretion; constant rho_DE as bookkeeping identity; falsifiable
+% edge at bound systems.
+% (5) Thawing phenomenology downgraded to conditional (potential
+% source unidentified; RtildeR route sole registered backup).
+% v6.3: cross-review sweep (ChatGPT, three-paper round): DESI/thawing
+% passage made strictly conditional and equilibrium-vacuum's
+% no-commitment status stated; Summary bullet 1 rewritten (candidate
+% carrier, amplitude unexplained, active explanation = equilibrium
+% subtraction); galactic-unification bullet retired as historical
+% motivation with provenance; Acknowledgments C2a-C2d status
+% corrected to executed.
+% v6.2: sec 8.4 updated -- omega existence+dynamization gates passed
+% (companion note); stabilization consequence now has an in-framework
+% candidate; photon consequence unresolved; R_star gate open.
+% v6.1: narrative-reset sweep (MAGI round, ChatGPT): all residual
+% v5.x claims removed -- 'scale is generated' -> generic possibility
+% with explicit no-computed-source status; 'dark-energy axion' ->
+% 'candidate'; 'smallness follows from transmutation' -> ledger
+% rewrite (form+smoothness survive; kind conditional; amplitude
+% unexplained); 'mechanism predicts thawing' -> conditional PNGB;
+% intro thesis rewritten as falsification-and-repositioning; status
+% box added at eq:transmute. Paper's stated identity: no longer a
+% derived-mechanism paper.
+% (6) Author-comprehension (teach-back) gate instituted: all theory
+% content in this version restated and approved by the author.
+% Companion to: Paper 1 (SPARC / emergent a0, v12), Paper 2 (emergent
+% GR, v2.14), Paper 3 (vector channel, v3.10), Paper 5 (working note,
+% v0.19).
+% ===================================================================
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,graphicx,booktabs,geometry,xcolor,slashed}
+\geometry{margin=1in}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\Mpl}{M_{\mathrm{Pl}}}
+\newcommand{\rhoL}{\rho_\Lambda}
+\newcommand{\mchi}{m_\chi}
+\newcommand{\LDE}{\Lambda_{\mathrm{DE}}}
+
+\title{Dark Energy as the Instanton Residual of a Lattice Fermion
+Condensate:\\
+Pseudo-Goldstone Quintessence and the Origin of the
+MOND--$\Lambda$ Coincidence}
+\author{Z.~Cheng}
+\date{July 2026 --- v6.3 (draft)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We reposition the dark-energy sector of the lattice fermion condensate
+framework on measured ground.  The ontology: the condensate's
+internal-dimension sector is an energy reservoir---a deep sea---of
+which the four-dimensional lattice vacuum is the surface; parity
+protects the smoothness of the surface's angular mode, and only
+structure (waves, knots, defects) should carry weight.
+The question of why the observed dark energy sits $122$ orders below
+the Planck scale is then addressed at three levels.
+(i) A candidate answer of Volovik type: a self-sustained condensate in
+equilibrium has identically vanishing vacuum pressure, so the
+equilibrium sea does not gravitate; whether the framework's
+\emph{induced} gravity realizes this---whether the emergent Einstein
+equations source only deviations from equilibrium---is a well-posed
+audit in the companion gravity paper's machinery, registered here as
+the new central computation.
+(ii) An executed and terminated mechanism: the dimensional-transmutation
+route ($\LDE^4 \sim \Lambda^4 e^{-S}$ via dilute monopoles of the
+orientation layer) required a lattice Skyrme coefficient
+$\kappa_U \simeq 0.14$; the first chirally complete measurement---five
+diagram classes, pointwise $A_0 \equiv 0$ to machine precision, two
+independent evaluators and integrators---gives
+$\kappa_U = -0.00149 \pm 0.00001$: ninety-seven times short and of
+opposite sign.  $S_{\rm mono} = -0.95 \notin [140,550]$, and the chain
+terminates by its pre-registered criterion; the viability-gate claims
+of earlier versions, which rested on a fit-leakage artifact, are
+retracted.
+(iii) An outlook, marked as picture: expansion as lattice
+accretion, with constant $\rho_{\rm DE}$ as a bookkeeping identity
+and a falsifiable edge at bound systems.
+What survives measurement: the parity smoothness theorem, the
+smooth-field Hopf-density theorem, the honest cosmological-constant
+accounting, and the unexplained scale coincidence
+$a_0 \sim \LDE^2/\Mpl$.
+\end{abstract}
+
+% ===================================================================
+\section{Introduction}
+\label{sec:intro}
+% ===================================================================
+
+The lattice fermion condensate programme treats spacetime, gravity,
+and dark matter as collective phenomena of a Planck-scale fermion
+substrate.  The gravitational sector is developed in
+\cite{Cheng:2026grav}, the galactic sector (a single emergent acceleration scale $a_0$,
+established against SPARC rotation curves after the decisive exclusion
+of the earlier fixed-range Yukawa kernel) in
+\cite{Cheng:2025sparc}, and the vector channel that controls the
+sign of the induced Newton constant in \cite{Cheng:2026vector}.
+Dark energy was the subject of the earliest version of the vector
+paper, under the title \emph{Dark Energy from a Pseudo-Hermitian
+Vacuum}; that mechanism has since been retired
+\cite{Cheng:2026vector}.
+
+This paper develops the dark-energy sector of that programme.  Its
+thesis has been reshaped by measurement, and this version states the
+reshaped form: dark energy is carried by the condensate's angular
+mode---a pseudo-Goldstone whose \emph{smoothness} is protected by
+parity (a theorem that survives everything below)---while the
+\emph{amplitude} $\LDE^4$ is at present unexplained: the concrete
+mechanism this programme constructed for it (dimensional transmutation
+through the orientation layer's monopole gas) was pre-registered,
+executed, and terminated by its own criterion
+(Section~\ref{sec:monopole}).  The paper is accordingly no longer a
+derived-mechanism paper; it is a falsification-and-repositioning
+paper, whose open front is the equilibrium-vacuum audit of
+Section~\ref{sec:volovik}.  We are
+equally explicit about the one piece the construction does \emph{not}
+supply---why the cancelled vacuum floor leaves a near-zero residual,
+the standard cosmological-constant problem shared with every
+induced-gravity programme---and we adopt the same posture as the
+companion gravitational paper \cite{Cheng:2026grav}, recording open
+problems sharply rather than concealing them.  What is new here is that
+the residual cosmological constant, once separated as a counterterm
+convention, no longer gates the \emph{dynamical} dark energy: the
+field-dependent instanton term survives the counterterm and is the
+physical object we compute.
+
+Throughout, $\rhoL \equiv \rho_{\mathrm{DE}}$ denotes the observed
+dark-energy density, $\rhoL \approx (2.3\times10^{-3}\,
+\mathrm{eV})^4 \approx 2.8\times10^{-11}\,\mathrm{eV}^4$, and
+$\Mpl = 2.4\times10^{27}\,\mathrm{eV}$ is the reduced Planck mass.
+
+% ===================================================================
+\section{The dark-energy axion candidate}
+\label{sec:closed}
+% ===================================================================
+
+\subsection{A retired alternative: the imaginary vacuum}
+\label{sec:imaginary}
+
+The complex condensate is $\Phi = \rho\,e^{i\theta}$, and the
+substrate fermion couples to it through a \emph{chiral} mass
+$M = g(\sigma + i\gamma_5\pi) = g\rho\,e^{i\gamma_5\theta}$, in which
+the pseudoscalar component necessarily carries $\gamma_5$.  The
+Dirac determinant of such a mass depends only on the modulus,
+\beq
+\det\bigl(i\slashed{p}_E + g\rho\,e^{i\gamma_5\theta}\bigr)
+= \bigl(p_E^2 + g^2\rho^2\bigr)^2 ,
+\eeq
+independent of $\theta$, because the chiral rotation assigns
+opposite phases to the left- and right-handed components, which
+cancel pairwise in the closed loop.  The one-loop angular direction
+is therefore flat, and every value of $\theta$---including
+$\theta = \pi/2$, the Hermitian pseudoscalar configuration
+$g\rho\,i\gamma_5$---is Hermitian.
+
+The earlier dark-energy mechanism rested on a purely imaginary,
+non-Hermitian mass $i g\rho$ (``$\theta = \pi/2$''), held metastable
+by a $\gamma_5$-pseudo-Hermitian, Krein-space construction, with the
+cosmological constant identified as the energy difference $\Delta V$
+between this configuration and the real vacuum.  Two independent
+facts retire it \cite{Cheng:2026grav,Cheng:2026vector}.  The
+configuration $ig\rho$ is not a point of the chiral condensate
+manifold at all, so the ``$\theta = \pi/2$ maximum'' of the older
+$\cos2\theta$ landscape was an artifact of a non-chiral
+parametrization of the determinant.  And any non-Hermitian
+construction fails on its own terms: the dispersion relation at such
+a configuration has imaginary energies for $|p| < m_I$, so the
+relevant $\mathcal{PT}$ symmetry is broken in the infrared and the
+reality theorems do not apply.  The intuition that ``energy stored
+on the imaginary axis drives expansion'' does not survive contact
+with the corrected vacuum structure.
+
+\subsection{The angular mode as dark-energy axion candidate}
+
+\textit{Structural requirement (added in v5.1).}  The
+identification below requires the microscopic four-fermion
+structure to preserve the classical $U(1)_A$, so that the angular
+mode's potential arises \emph{only} from the topological sector;
+tree-level $U(1)_A$ breaking would lift the mode to the cutoff
+scale.  In the multi-flavor extension of the programme this
+selects the classically $U(2)\times U(2)$-symmetric interaction
+(machine-verified to preserve the vacuum-stability protections;
+see the internal-dimension working note), whose vacuum manifold
+$U(2) \cong (S^1 \times S^3)/\mathbb{Z}_2$ carries this paper's
+angular mode on the $S^1$ factor and topological matter on the
+$S^3$ factor.
+The completed re-audit adds three quantitative statements.
+First, the classical $U(1)_A$ invariance of the
+$U(2)\times U(2)$ interaction is \emph{exact} (machine-verified
+under continuous axial rotations), so the tree-level flatness of
+the angular direction is a symmetry theorem rather than an
+approximation.
+Second, and decisively for methodology: in the Wilson
+discretization used for the programme's lattice campaigns, the
+mechanism of this paper does not merely suffer contamination---it
+is \emph{absent}: at the condensate operating point the
+pseudoscalar channels are bubble-supercritical
+($G_{\rm op} = 2.97$ against a pseudoscalar bubble criticality of
+$1.51$ in the same calibrated units), so the would-be Goldstone
+directions are reorganized at the cutoff scale (Aoki-type).
+A Ginsparg--Wilson (overlap) discretization is therefore a
+\emph{requirement} of the dark-energy sector, not an improvement:
+it preserves the exact tree-level flatness while supplying the
+anomaly through the fermion measure, and its index theorem gives
+the first well-posed lattice definition of the topological charge
+whose susceptibility is this paper's central open computation.
+Third, minor bookkeeping: the flavor trace doubles the angular
+mode's kinetic normalization, $f \to \sqrt{2} f$, slightly
+easing the super-Planckian decay-constant requirement, and the
+$U(2)$ model adds $\pi_4(SU(2)) = \mathbb{Z}_2$ to the candidate
+topological structures relevant to that computation.
+\textit{Re-scoping of the central computation (v5.3).}
+A machine test closes one candidate and re-scopes the search: with
+trivial links, the overlap topological charge
+$Q = -\tfrac12\,{\rm Tr}\,{\rm sign}(H_W)$ vanishes identically
+for every chiral-field background tested (uniform $U(1)_A$
+windings and localized lumps), confirming the analytic statement
+that a pure fermion substrate carries no $U(1)_A$ anomaly: the
+angular mode is an \emph{exact} Goldstone at this level, and the
+potential this paper requires cannot arise from the fermion-kernel
+index.  A $F\tilde F$-like source is needed.  Within the
+programme three candidates remain, all uncomputed: a composite
+gauge sector (disfavored at natural couplings by the
+vector-channel pole analysis of the companion paper); the
+mixed $U(1)_A$--gravitational anomaly of the \emph{emergent
+geometry itself}, $\partial_\mu j_A^\mu \propto R\tilde R$, under
+which $\Lambda_{\rm DE}$ would be set by the topological
+susceptibility of emergent-geometry fluctuations---a speculative
+but structurally natural route that would make the dark
+energy--gravity connection intrinsic rather than coincidental;
+and \emph{(added in v5.5)} the Hopf density $f \wedge f$ of the
+composite Berry connection carried by the $\mathbb{CP}^1$
+orientation quotient of the $U(2)$ chiral field (the $S^2$ layer
+of the internal-dimension working note, gate S2-3): whether the
+fermion determinant couples the angular mode to this density is a
+well-posed derivative-expansion question, and a positive answer
+would make Hopfion topological fluctuations of the orientation
+sector the source, at no cost in new degrees of freedom.
+The central open computation of this paper is accordingly
+re-scoped from ``identify the topological sector'' to ``compute
+the gravitational topological susceptibility of the emergent
+geometry, exhibit a composite gauge structure, or establish the
+$\eta$--Hopf coupling of the orientation sector.''
+\textit{Second re-scoping (v5.6).}
+The third candidate is now sharpened by a theorem.
+The composite Berry curvature of the $\mathbb{CP}^1$ orientation
+layer is the pullback of the Fubini--Study two-form,
+$f = \phi^*\omega$; since $\omega\wedge\omega = 0$ on a
+two-manifold and pullback commutes with the wedge product,
+$f \wedge f \equiv 0$ \emph{pointwise for every smooth
+configuration} (machine-verified:
+$|\varepsilon^{\mu\nu\rho\sigma}f_{\mu\nu}f_{\rho\sigma}|/|f|^2
+< 5\times10^{-16}$ over $200$ random smooth fields).
+The Hopf-density candidate as originally stated is therefore empty
+on smooth fields, and the susceptibility can arise only from the
+\emph{singular} sector: the $\pi_2(S^2) = \mathbb{Z}$ monopole
+defects whose worldline loops carry non-exact flux---precisely the
+objects that gate S2-2 of the internal-dimension working note had
+flagged as the photon candidate's principal assassin.
+Sections~\ref{sec:mediator} and~\ref{sec:monopole} develop the
+consequences: the composite gauge route remains disfavored at
+natural couplings \cite{Cheng:2026vector}, the gravitational
+$R\tilde R$ route remains open as a backup, and the monopole sector
+becomes the leading candidate, with a passed viability gate.
+
+\label{sec:axion}
+
+The phase of the condensate is fixed not at one loop (which is flat in
+the corrected chiral parametrization) but by the subleading
+chiral-symmetry-breaking effects---the axial anomaly and the discrete
+lattice structure---which generate a shallow periodic potential of
+instanton origin,
+\beq
+V_\theta(\theta) = K\,[\,1 - \cos(M\theta)\,],
+\qquad K \sim \LDE^4 ,
+\label{eq:Vtheta}
+\eeq
+with minimum at the $CP$-conserving point $\theta = 0$.  We identify
+this angular pseudo-Goldstone as the dark-energy field.  Two features
+make the identification natural and were not available to the earlier,
+imaginary-vacuum reading.
+
+\emph{It is automatically smooth.}  The angular mode is a pseudoscalar;
+parity forbids a non-derivative coupling to the scalar density of
+unpolarized matter, $\phi\,\bar\psi\psi$, so the field does not cluster
+and mediates no fifth force---exactly the inertness dark energy
+requires, obtained here for free rather than imposed.  (The same
+parity argument places the matter-coupled, fifth-force-bearing degree
+of freedom in the \emph{scalar} channel, which is where the companion
+galactic paper locates it; see Section~\ref{sec:mond}.)
+
+\emph{Status (v6.0): no computed sector currently supplies the
+scale.}  The height $K\sim\LDE^4$ would be a topological
+susceptibility, and a susceptibility \emph{could in principle} lie
+exponentially below the cutoff by dimensional transmutation,
+\beq
+\LDE^4 \;\sim\; \Lambda^4\, e^{-S}, \qquad
+S \;=\; \frac{8\pi^2}{b_0\, g^2(\Lambda)} ,
+\label{eq:transmute}
+\eeq
+so that $\rhoL/\Mpl^4 \sim 10^{-120}$ follows from
+$b_0\,g^2(\Lambda)\simeq 0.29$ (i.e.\ $S \simeq 276$)---an
+$\mathcal{O}(1)$ coupling, e.g.\ $g \simeq 0.5$ with
+$b_0 \simeq 1.1$---rather than a $122$-digit cancellation.
+(Erratum for v5.5, which stated $b_0 g^2 \simeq 1$; that value
+would give $e^{-S} \sim 10^{-34}$, not $10^{-120}$.)
+This is a \emph{generic possibility, not a result of the framework}:
+the one concrete realization this programme constructed---the
+monopole gas of the orientation layer, with
+$1/g'^2 = 32N\kappa_U$---fails the pre-registered C2a criterion by
+two orders of magnitude and a sign (Section~\ref{sec:monopole}); no
+computed sector currently supplies $S \simeq 276$.  Were such a
+sector found, the smallness of dark energy would be the same kind of
+exponential hierarchy that separates $\Lambda_{\mathrm{QCD}}$ from
+the Planck
+scale.  Identifying the precise topological sector whose susceptibility
+sets $\LDE$ is named as the central computation in
+Section~\ref{sec:open}.
+
+% ===================================================================
+\section{The Planckian floor as a counterterm convention}
+\label{sec:cc}
+% ===================================================================
+
+The induced gravitational action of \cite{Cheng:2026grav} has, as its
+leading vacuum term, a cosmological constant of Planckian size,
+\beq
+\Gamma_{\mathrm{ind}} \supset c_0\, N\,\Lambda^4
+\int\! d^4x\,\sqrt{g},
+\qquad N\Lambda^4 \sim \Mpl^4 .
+\eeq
+Two things must be said about it, one familiar and one decisive for
+what follows.
+
+The familiar point is that the coefficient $c_0$ is
+\emph{scheme-dependent}---a constant counterterm, exactly as the
+induced Newton constant $\Mpl^2$ of \cite{Cheng:2026grav} was found to
+be scheme-dependent.  Its renormalized value is fixed by a single
+subtraction, conventionally chosen so that the potential minimum sits
+at the observed floor.  Why that floor is near zero rather than
+Planckian---$\rhoL/\Mpl^4 \sim 10^{-120}$
+\cite{Weinberg:1988cp}---is the cosmological-constant problem in its
+standard form, and we do not solve it: it is shared with every theory
+that contains gravity, and we record it as the one input the
+construction does not supply.
+
+The decisive point is that a \emph{constant} counterterm can remove
+only the constant part of the vacuum energy.  The
+field-\emph{dependent} instanton potential, Eq.~\eqref{eq:Vtheta},
+\emph{cannot} be cancelled by it: shifting $c_0$ moves the floor but
+leaves the shape $-K\cos(M\theta)$ intact.  A quintessence field
+frozen above this minimum therefore carries a positive energy that no
+choice of the constant counterterm can subtract away.  This is what
+separates the dynamical dark energy developed below from the static
+floor: the floor is a convention, the residual is physical.
+
+% ===================================================================
+\section{Quintessence phenomenology}
+\label{sec:quint}
+% ===================================================================
+
+\subsection{The surviving residual is PNGB quintessence}
+
+The surviving field-dependent residual is a small, slowly-varying
+energy density---i.e.\ quintessence \cite{Ratra:1987rm,Caldwell:2005tm}.
+Equation~\eqref{eq:Vtheta} is a shallow cosine potential for a compact
+pseudo-Goldstone; a field of this type with a Planck-scale decay
+constant is the pseudo-Nambu--Goldstone (PNGB) quintessence of Frieman,
+Hill, Stebbins and Waga \cite{Frieman:1995pm}.  The framework does not
+postulate this structure: it is the generic low-energy content of the
+spontaneously broken approximate phase symmetry that the substrate
+already realizes, now read on the corrected (real/chiral) vacuum rather
+than the retired imaginary one.
+
+\subsection{No second field is required}
+
+An earlier version of this programme, in which the angular mode was
+read as the \emph{dark-matter} field, faced an over-determination: a
+single mode could not carry both an $\mathrm{eV}^4$-scale potential
+(the height implied by a $10^{-27}\,\mathrm{eV}$ dark-matter mass) and
+the $(\mathrm{meV})^4$ scale of dark energy, and a \emph{second}
+pseudo-Goldstone had to be postulated.  The parity analysis of
+Section~\ref{sec:axion} removes this requirement.  The matter-coupled,
+clustering degree of freedom---the one relevant to galactic
+dynamics---is necessarily a \emph{scalar}, not the pseudoscalar
+angular mode; in the companion galactic paper it manifests not as a
+relic particle but as an acceleration-scale (MOND-like) modification
+of the gravitational response (Section~\ref{sec:mond}).  The angular
+pseudoscalar is then free to serve as the dark-energy axion
+candidate, and a single
+complex condensate suffices: its radial/scalar sector governs the
+galactic acceleration scale, its angular/pseudoscalar sector the
+cosmological one.  The economy the earlier reading lacked is restored.
+
+\subsection{Slow-roll conditions and thawing phenomenology
+(conditional)}
+
+\emph{Status note (v6.0).}  With the transmutation mechanism
+terminated (Section~\ref{sec:monopole}), no computed sector currently
+supplies the potential scale $\LDE^4$; the $R\tilde R$ route is the
+sole registered backup.  The phenomenology of this subsection is
+therefore \emph{conditional}: it describes what follows \emph{if} a
+potential of the protected cosine form arises at the observed scale
+from any source.  The parity smoothness theorem and the PNGB
+structure are unaffected.
+
+Writing the quintessence field as $\phi$ with
+\beq
+V(\phi) = \Lambda_{\mathrm{DE}}^4\,
+\bigl[\,1 + \cos(\phi/f)\,\bigr],
+\eeq
+the present dark-energy density requires
+$\Lambda_{\mathrm{DE}}^4 \sim \rhoL \sim (2.3\,\mathrm{meV})^4$.  For
+the field to act as dark energy today it must be slowly rolling,
+i.e.\ frozen by Hubble friction until recently, which requires
+\beq
+m_\phi^2 \;\simeq\; \frac{\Lambda_{\mathrm{DE}}^4}{f^2}
+\;\lesssim\; H_0^2 \;\sim\; \frac{\rhoL}{3\Mpl^2}
+\quad\Longrightarrow\quad
+f \;\gtrsim\; \Mpl .
+\eeq
+A super-Planckian decay constant is the standard, and standardly
+uncomfortable, requirement of PNGB quintessence; in the present
+framework it is a nontrivial constraint on the \emph{single}
+condensate's own order parameter, not a free choice: the decay
+constant is $f \simeq \sqrt{2}\,v$ (after the flavor-trace
+normalization noted in Section~\ref{sec:closed}), and
+$v \sim \Lambda/g$ with the lattice scale sitting at or above the
+Planck mass in the companion gravitational budget, so
+$f \gtrsim \Mpl$ is consistent with---though not yet derived
+from---the microscopic parameters.  When such a
+field begins to thaw, its equation of state departs upward from
+$-1$,
+\beq
+1 + w_0 \;\simeq\; \frac{\Mpl^2}{3}
+\left(\frac{V'}{V}\right)^2_{\!0}
+\;\sim\; \left(\frac{\Mpl}{f}\right)^2
+\sin^2\!\frac{\phi_0}{f},
+\eeq
+so the candidate is a \emph{thawing} quintessence with $w \gtrsim -1$
+evolving in time, rather than a cosmological constant.
+
+\subsection{What is explained and what remains}
+
+After the C2a termination the ledger reads as follows.  What
+survives: the \emph{form}---a protected cosine (PNGB) potential for a
+compact pseudo-Goldstone---and the \emph{smoothness}: no clustering,
+no fifth force, by parity; these are structural and
+measurement-proof.  What is conditional: the \emph{kind}---a
+dynamical, thawing component---follows \emph{if} a potential of the
+protected form arises at the observed scale from any source.  What is
+unexplained: the \emph{amplitude} $\LDE^4$ itself; its one computed
+candidate is terminated (Section~\ref{sec:monopole}), and the
+equilibrium-vacuum audit (Section~\ref{sec:volovik}) is the
+registered successor question.  What does not follow is the near-vanishing of the
+vacuum \emph{floor}: the constant counterterm of
+Section~\ref{sec:cc} must still be tuned so that the minimum sits near
+zero, and this is the standard cosmological-constant problem, untouched
+here.  The construction thus separates cleanly into a part it
+explains---the dynamical residual---and the one part it shares with all
+of physics---the floor.  This is a genuine reduction of the problem,
+not a relocation of it: the residual is computed, not fitted.
+
+% ===================================================================
+\section{Unification with the galactic sector: the
+MOND--$\Lambda$ coincidence}
+\label{sec:mond}
+% ===================================================================
+
+The scale $\LDE$ that fixes the dark-energy density also fixes a
+characteristic \emph{acceleration}.  The natural acceleration built
+from the dark-energy scale and the Planck mass is
+\beq
+a_0 \;\sim\; \frac{\LDE^2}{M_{\mathrm{Pl}}^{\mathrm{(full)}}}
+\;\approx\; 2\times10^{-10}\ \mathrm{m\,s^{-2}}
+\;\sim\; \frac{cH_0}{2\pi},
+\label{eq:a0}
+\eeq
+within a factor of two of the value
+$a_0^{\mathrm{obs}}\approx1.2\times10^{-10}\ \mathrm{m\,s^{-2}}$ at
+which galactic rotation curves depart from their Newtonian baryonic
+prediction.  In the companion galactic paper \cite{Cheng:2025sparc}
+this same scale appears as the crossover of an acceleration-dependent
+(k-mouflage) response of the condensate's scalar sector: the force is
+screened where the local acceleration exceeds $a_0$ (Solar-System
+scales) and active where it falls below (galaxy outskirts), with the
+crossover set by $(\partial\chi)^2\sim\rho_{\mathrm{DE}}\sim\LDE^4$.
+
+The numerical coincidence $a_0\sim cH_0\sim c^2\sqrt{\Lambda}$ has been
+noted since the inception of MOND and has resisted explanation in
+$\Lambda$CDM, where the galactic and cosmological scales are
+unrelated.  Here it is structural: the galactic and dark-energy
+phenomenologies share a single scale because both are infrared
+aspects of one condensate.  Earlier versions of this paper assigned
+the galactic response to the condensate's ``scalar sector''; that
+assignment does not survive the cross-audit of
+Section~\ref{sec:mediator}---the radial mode sits at the cutoff, and
+parity forbids the angular mode a linear matter coupling---and the
+requisite acceleration-dependent response, if it exists, must instead
+be carried \emph{disformally} by the same topological sector that
+generates the dark energy.  Eq.~\eqref{eq:a0} fixes only the scale,
+which is robust; the mechanism-level unification it suggests is
+developed, with its computed constraints, in
+Sections~\ref{sec:mediator} and~\ref{sec:monopole}.
+
+% ===================================================================
+\section{The mediator gap and the topological funnel}
+\label{sec:mediator}
+% ===================================================================
+
+\subsection{The gap, stated as a finding}
+
+A cross-audit of the companion papers exposes a structural gap that
+this paper is the right place to record, because its resolution runs
+through the dark-energy sector.  The galactic phenomenology of
+\cite{Cheng:2025sparc} requires a light degree of freedom with a
+coherent coupling to unpolarized baryonic matter.  The framework's
+documented light modes cannot supply it linearly:
+(i) the radial (amplitude) mode sits at the cutoff
+($m_\sigma = 2m_{\rm dyn}$, measured);
+(ii) the vector channel supports no below-threshold state at the
+invariant-universal coupling \cite{Cheng:2026vector};
+(iii) the angular mode---this paper's dark-energy axion candidate---is a
+pseudoscalar, and the \emph{same parity theorem that guarantees its
+smoothness} (Section~\ref{sec:axion}) forbids the linear coupling
+$\phi\,T^\mu{}_\mu$ to unpolarized matter; and
+(iv) the mixing-induced monopole coupling scales as
+$\varepsilon \sim m_\phi^2/\Lambda^2 \sim 10^{-122}$ for a
+Hubble-mass field, negligible.
+The effective coupling used phenomenologically in
+\cite{Cheng:2025sparc} therefore had no assigned microscopic origin.
+This is not a fatal inconsistency but an open circuit, and parity
+itself dictates the only place it can close: a coupling
+\emph{quadratic} in the pseudoscalar,
+$\partial_\mu\phi\,\partial_\nu\phi\,T^{\mu\nu}/M^4$---a
+\emph{disformal} metric coupling, parity-even, and precisely the
+structure employed by relativistic MOND-type theories
+\cite{Bekenstein:2004ne}.
+
+\subsection{Two computed negative results close the loop-level
+routes}
+
+Whether the framework can generate such a response at the required
+strength is a quantitative question, and two computations answer it
+for every non-topological route.
+
+\emph{The pairing channel cannot supply the kinetic function.}
+For a superfluid phonon, the leading-order effective Lagrangian is
+the equation of state, $\mathcal{L}(X) = P(\sqrt{X})$
+\cite{Son:2002zn}, and a flat-rotation-curve (MOND) response requires
+the non-analytic form $P \propto (\mu-\mu_c)^{3/2}$, i.e.\ a
+three-body--dominated polytrope $P \propto n^3$.  A mean-field
+computation for the relativistic four-fermion pairing model gives
+$P \propto (\mu-\mu_c)^{2}$ at the BEC onset (measured exponent
+$2.005 \to 2.000$) and $P \propto \mu^4$ in the BCS regime: a
+contact two-body vertex yields the two-body exponent, structurally,
+for any coupling strength, cutoff, or fermion mass.  In the adopted
+$U(2)\times U(2)$ model the point is moot as well as closed: the
+exact pairing decomposition contains no scalar-diquark channel at
+all, and the substrate carries no light fermion density at galactic
+scales.
+
+\emph{The fermion loop cannot supply the scale.}
+Rotating the angular mode into an axial background
+$b_\mu = \partial_\mu\phi/2f$ and integrating out the substrate
+fermion exactly (constant spacelike $b$; dispersion
+$E_\pm^2 = p_\perp^2 + (\sqrt{m_{\rm dyn}^2 + p_\parallel^2} \pm
+b)^2$) gives a one-loop effective potential that is an even power
+series in $b$ to a verified relative precision of $10^{-11}$, with
+$|b|^3$ excluded and the leading nonlinearity entering at
+$b \sim m_{\rm dyn}$.  The disformal terms
+$b_\mu b_\nu$ in composite kinetic tensors are generated---the
+dispersion above is manifestly anisotropic, so the parity gap does
+close---but with coefficient $\sim 1/(f^2 m_{\rm dyn}^2) \sim
+1/M_{\rm Pl}^4$.  At galactic gradients,
+$b \sim \LDE^2/M_{\rm Pl} \sim 2\times10^{-33}\,\mathrm{eV}$ against
+$m_{\rm dyn} \sim 10^{28}\,\mathrm{eV}$: the loop-level response is
+suppressed by $(b/m_{\rm dyn})^2 \sim 10^{-122}$.
+
+\subsection{The funnel}
+
+The two results together leave exactly one source in the framework
+for kinetic or disformal structure that turns on at
+$X \sim \LDE^4$ rather than $\Lambda^4$: the topological sector
+itself---the same $e^{-S}$ object that generates $V(\phi)$.
+Every scale in the loop expansion is Planckian; only the
+dimensionally transmuted sector knows about the meV.  The
+consequence is a conditional upgrade of the MOND--$\Lambda$
+coincidence: \emph{if} the acceleration-dependent galactic response
+exists in this framework, it and the dark energy are generated by
+the same topological fluctuations, and the two phenomenologies stand
+or fall together.  This is a strictly stronger---and therefore more
+falsifiable---claim than the shared-scale statement of
+Section~\ref{sec:mond}; and it has since been \emph{cashed}: the
+funnel's unique address was computed (the monopole gas's gradient
+response: non-analytic at the correct scale but of wall type,
+$X^{1/2}$, with no source), and the C2a measurement of
+Section~\ref{sec:monopole} subsequently removed the diluteness the
+address relied on.  The galactic side of the funnel is closed at
+leading order; the joint-falsifiability structure did its work in
+the killing direction.
+
+% ===================================================================
+\section{The C2a measurement: execution and termination record}
+\label{sec:monopole}
+% ===================================================================
+
+\subsection{What was claimed, and on what it rested}
+
+Versions 5.6--5.8 of this paper reported a passed viability gate: the
+programme's Skyrme coefficient, converted through the orientation
+layer's exact Skyrme--Maxwell identity to a compact-$U(1)$ coupling
+$\beta = 32N\kappa_U \in [5,47]$, appeared to bracket the
+monopole-loop action $S \simeq 276$ that the observed dark energy
+requires, and to place the layer in its Coulomb phase.  Those claims
+rested on the July-8 campaign values $\kappa_U \in [0.054, 0.49]$.
+A pre-production pilot subsequently identified those values as
+\emph{fit-leakage artifacts}: the box-only diagram set is chirally
+incomplete (its zero-momentum amplitude $A_0$ does not vanish), and a
+fit basis lacking a constant term leaked $A_0$ into the $k^4$
+coefficient, diverging as $1/e^4$ in the external momentum---even the
+apparent logarithmic growth toward the chiral limit was mimicked by
+the leak.  \textbf{The v5.6--5.8 gate claims, including the
+Coulomb-phase co-resolution, are retracted.}
+
+\subsection{The corrected measurement}
+
+The C2a computation (repository \texttt{kappa-c2a}, branch history
+public) rebuilt the measurement with pre-registered gates: the full
+five-class diagram set (box, triangle, bubble, sunset, contact) with
+symbolically derived flavour weights; a chiral-completeness gate
+requiring the zero-momentum amplitude to cancel \emph{pointwise},
+satisfied at machine precision ($10^{-15}$) and independently
+reproduced on a second machine with fresh seeds---a gate that itself
+caught and corrected a factor-2 error in the contact prefactor (the
+closed fermion loop's flavour trace); the Ward-identity anchor fixing
+the vertex normalization ($m\,\Pi_P(0) = -\langle\bar\psi\psi\rangle$,
+exact); a plateau protocol ($e \le m/3$, three momenta per mass); an
+overdetermined operator projection; a five-point mass scan; two
+independent evaluators and two independent integrators; and a stacked
+error budget.  The result:
+\begin{equation}
+\kappa_U \;=\; -0.00149 \pm 0.00001,
+\end{equation}
+mass-independent across the scan (UV-finite, as expected of the
+scheme-independent Skyrme term), with magnitude within $6\%$ of
+$1/(64\pi^2)$---squarely at the textbook one-loop
+(Gasser--Leutwyler) scale for a chiral fermion loop's $O(p^4)$
+coefficients.  The measurement is unremarkable; the mechanism's
+requirement was not.
+
+\subsection{The pre-registered verdict}
+
+\begin{quote}
+If the pinned $\kappa_U$ places $S_{\rm mono} = 640\,\kappa_U$ outside
+$[140, 550]$, the dark-energy chain terminates.\\[2pt]
+$S_{\rm mono} = 640 \times (-0.00149) = -0.95 \notin [140,550]$:
+\textbf{the chain terminates.}
+\end{quote}
+Doubly decisive: the magnitude is $\sim\!100\times$ short (no
+convention or regulator ambiguity in the audit reaches a factor
+$97$), and the sign is negative.  Physically: the substrate's quartic
+resistance to orientation twisting is of ordinary one-loop strength,
+so monopoles are \emph{cheap} ($S \sim 1$), topological events are
+dense rather than exponentially rare, and this sector's vacuum
+churns rather than whispers---its susceptibility sits at the cutoff
+scale, not the meV scale.  The exponential explanation of dark-energy
+smallness is not realized here.
+
+\subsection{Consequences and residual checks}
+
+The gravitational $R\tilde{R}$ route of Section~\ref{sec:closed}
+remains the sole registered (uncomputed) transmutation backup.  The
+negative sign, if confirmed, additionally implies a wrong-sign induced
+Maxwell term for the orientation layer's photon candidate and removes
+the one-loop Skyrme stabilizer of the skyrmion (baryon)
+identification---consequences carried by the companion working note.
+\emph{Both registered residual checks have since been completed}:
+the coefficient is derived in closed form,
+$\kappa_U = -17/(1152\pi^2) = -0.0014952$ exactly (the measured
+value agrees to $0.3\%$; the expansion's $m^2$ and $m^4$ corrections
+cancel identically, confirming UV-finiteness analytically), and the
+negative sign is confirmed under Pauli--Villars regularization
+(three heavy-mass points, converging to the sharp-cutoff value).
+The termination is thereby Monte-Carlo--independent:
+$S_{\rm mono} = -85/(9\pi^2)$, an exact rational multiple of
+$1/\pi^2$, outside $[140,550]$ by construction.
+
+% ===================================================================
+\section{The equilibrium vacuum: why the deep sea need not gravitate}
+\label{sec:volovik}
+% ===================================================================
+
+With the transmutation mechanism terminated, this paper returns the
+smallness question to its ontological ground and registers the one
+candidate answer consistent with everything measured.  The ontology
+(the author's, throughout this programme): the internal-dimension
+sector of the condensate is an energy reservoir---a deep sea---of
+which the four-dimensional lattice vacuum is the surface.  Hiddenness
+alone, however, is not an answer: energy in internal dimensions
+gravitates in four dimensions.  The candidate answer is of
+\emph{equilibrium} type, due to Volovik \cite{Volovik:2003fe}: for a
+\emph{self-sustained} quantum condensate---one that maintains its own
+equilibrium without external pressure---the thermodynamic identity
+forces the effective vacuum pressure, and with it the gravitating
+vacuum energy, to vanish identically in equilibrium.  Not tuned to
+zero; zero by the definition of equilibrium.  What gravitates is then
+exclusively the \emph{deviation} from equilibrium: waves, knots,
+defects, and the small residual by which an expanding universe fails
+to be in exact equilibrium.
+
+Two honesty clauses accompany this.  First, the known weakness of the
+Volovik programme: the relaxation dynamics that would pin the
+present-day residual (and its magnitude, $10^{-122}$ or otherwise)
+has never been derived, there or here; the ``thickness of the ice''
+remains a price-tagged unknown.  Second, and constructively: in this
+framework the statement is \emph{testable at the level of first
+principles}, because gravity is induced rather than postulated.
+Whether the emergent Einstein equations of the companion gravity
+paper source the full condensate energy or only its deviations from
+equilibrium is a well-posed audit of the induced source term within
+existing machinery.  \textbf{This audit replaces the terminated
+transmutation computation as the central open computation of this
+paper.}  Its pre-registered stakes: if the induced source contains
+the equilibrium ground-state energy, the framework inherits the
+cosmological-constant problem in full and the sea ontology loses its
+explanatory candidate; if it does not, the smallness question reduces
+to the residual's dynamics.
+
+\subsection*{Outlook: expansion as accretion (picture, not derivation)}
+
+The author's cosmological picture, recorded with its status marked:
+the lattice grows---expansion is the accretion of new cells, paid
+from the sea.  This is kin to sequential-growth dynamics in causal
+set theory \cite{Sorkin:2003bx} and to the emergent-space account of
+expansion of Padmanabhan \cite{Padmanabhan:2012ik}, in which the
+production of spatial degrees of freedom drives, and is driven by,
+the Friedmann dynamics.  Within it, the constancy of
+$\rho_{\rm DE}$ becomes a bookkeeping identity rather than a
+mystery---each new cell carries the same vacuum quota---which is the
+legitimate successor of this programme's earliest reading of the
+dark energy (``total lattice count''), retired as a mechanism and
+revived as an accounting.  The picture owes one equation (the
+accretion rate's relation to $H$) before it is physics, and carries
+one falsifiable edge worth recording: if accretion is strictly
+uniform, cells produced inside bound systems could leave residual
+drag signatures constrained by lunar laser ranging and atomic-clock
+comparisons.  It is presented as the author's outlook, not as a
+derivation.
+
+\section{Observational handle}
+\label{sec:obs}
+% ===================================================================
+
+The candidate is falsifiable through the equation of state.  A pure
+cosmological constant has $w = -1$ exactly; PNGB thawing quintessence
+predicts $w_0 > -1$ with $dw/da < 0$ (less negative in the past,
+approaching $-1$ at early times)---a definite, distinguishable
+signature.  Current baryon-acoustic-oscillation data from DESI
+\cite{DESI:2024} favour an evolving equation of state over a constant
+$\Lambda$, with a Chevallier--Polarski--Linder fit pulling toward
+$w_0 > -1,\ w_a < 0$, i.e.\ the thawing class, at a significance that
+has grown but is not yet decisive and that depends on the supernova
+sample combined with the BAO data.  We do not over-read this: the
+preference may yet be a systematic.  The point of consistency is
+nonetheless sharp---and, post-C2a, strictly conditional.  \emph{If}
+another microscopic source generates a protected field-dependent
+residual at the observed scale, that construction is not free to
+predict a constant $\Lambda$: it is by construction dynamical and
+falls in the thawing class the data currently prefer.  The
+equilibrium-vacuum candidate of Section~\ref{sec:volovik}, by
+contrast, makes no thawing commitment yet: whether its residual is
+near-constant or dynamical depends on the relaxation/accretion
+dynamics that has not been derived.  A confirmed evolving
+$w_0 > -1$, $w_a < 0$ would single out the thawing pseudo-Goldstone
+class; a strictly constant $w = -1$ would disfavour that class while
+leaving the equilibrium-subtraction question untouched.
+
+% ===================================================================
+\section{Summary and the central open computation}
+\label{sec:open}
+% ===================================================================
+
+The dark-energy sector of this framework can be summarized as follows.
+
+\begin{itemize}
+\item The condensate contains a parity-protected angular-mode
+  \emph{candidate} carrier for dark energy, with the protected
+  potential form $V(\phi)=\LDE^4[1+\cos(\phi/f)]$---but no computed
+  mechanism currently fixes the amplitude $\LDE^4$
+  (Section~\ref{sec:axion}).  The active explanation under test is
+  instead equilibrium subtraction of the deep vacuum sea
+  (Section~\ref{sec:volovik}).
+\item The Planckian vacuum floor is a scheme-dependent counterterm; a
+  constant counterterm sets the minimum but \emph{cannot} remove the
+  field-dependent residual, which is therefore physical
+  (Section~\ref{sec:cc}).  Why the floor is near zero remains the
+  standard cosmological-constant problem, the one input not supplied.
+\item The field is smooth because parity decouples a pseudoscalar
+  from unpolarized matter---a theorem, unaffected by any measurement
+  below.  The scale $\LDE^4$ is \emph{not} currently generated by
+  anything computed: the transmutation reading survives only as a
+  generic possibility (Sections~\ref{sec:axion},
+  \ref{sec:monopole}).
+\item \emph{Retired historical motivation, recorded for
+  provenance}: earlier versions proposed that the same topological
+  sector carries both the dark energy and a disformal galactic
+  response, upgrading the MOND--$\Lambda$ coincidence to joint
+  falsifiability.  That structure was cashed in the double-negative
+  direction: the galactic routes are closed at leading order
+  (companion galactic paper) and the dark-energy chain is terminated
+  (Section~\ref{sec:monopole}).  The scale coincidence
+  $a_0\sim\LDE^2/\Mpl\sim cH_0/2\pi$ survives as a relation between
+  two observed numbers (Section~\ref{sec:mond}).
+\item The transmutation mechanism was constructed, pre-registered,
+  and \emph{executed to termination}: the first chirally complete
+  measurement of the Skyrme coefficient gives
+  $\kappa_U = -0.00149(1)$, ninety-seven times below the requirement
+  and of opposite sign; earlier viability claims are retracted as
+  fit-leakage artifacts (Section~\ref{sec:monopole}).  The
+  smooth-field Hopf-density theorem survives; the gravitational
+  $R\tilde R$ route is the sole registered backup.
+\item The smallness question is returned to the equilibrium-vacuum
+  candidate (Volovik): a self-sustained condensate does not
+  gravitate in equilibrium; whether the framework's induced gravity
+  realizes this is the new central computation
+  (Section~\ref{sec:volovik}).
+\item If a protected cosine potential at the observed scale is
+  generated by another source, the resulting field belongs to the
+  thawing PNGB class ($w_0>-1$ evolving, currently favoured by
+  DESI), with the lattice band for $f/\Mpl$ mapping onto the thawing
+  rate---conditional phenomenology, not a mechanism's prediction
+  (Section~\ref{sec:obs}).
+\end{itemize}
+
+The gate ladder of the previous versions was climbed and broke at
+its first rung, exactly as its pre-registration allowed: C2a
+terminated the chain, and C2b--C2d fall with it.  The paper's open
+front is now single and different in kind: the induced-source audit
+of Section~\ref{sec:volovik}---does the emergent Einstein equation
+weigh the equilibrium sea, or only its deviations?  Its two residual
+side-checks (closed-form $\kappa_U$; second-regulator sign) close
+the C2a record.  With the audit done---either way---the dark-energy
+sector will again rest entirely on computed ground.
+
+% ===================================================================
+\section*{Acknowledgments}
+The author thanks Claude (Anthropic) for assistance with the
+vacuum-structure analysis, the quintessence literature, the
+mediator-gap audit and its two negative-result computations, the
+pullback theorem and monopole re-scoping of
+Section~\ref{sec:monopole}, and manuscript preparation.  The
+derivations were developed with substantial AI assistance and the
+numerical results of Sections~\ref{sec:mediator}
+and~\ref{sec:monopole} were reproduced from archived scripts within
+this collaboration; the gate-ladder computations have since been carried out and their
+verdicts recorded: C2a (executed, chain-terminating,
+Section~\ref{sec:monopole}), C2d (executed in the companion galactic
+programme: correct crossover scale, wrong exponent, no source);
+C2b--C2c fall with C2a.
+
+% ===================================================================
+\begin{thebibliography}{9}
+
+\bibitem{Cheng:2026grav}
+Z.~Cheng,
+\emph{Emergent gravity from a lattice fermion condensate:
+light-cone universality, counterterm degeneracies, and universal
+mass-logarithmic coefficients},
+companion paper (2026), in preparation.
+% NOTE: version numbers removed from bib entries to prevent drift;
+% current companion versions are tracked in the header comment.
+
+\bibitem{Cheng:2025sparc}
+Z.~Cheng,
+\emph{Yukawa-kernel dark matter halos against SPARC rotation
+curves}, in preparation (2026).
+
+\bibitem{Cheng:2026vector}
+Z.~Cheng,
+\emph{The vector channel of a lattice fermion condensate: a massive
+composite vector and the sign of the induced Newton constant},
+companion paper (2026), in preparation.
+
+\bibitem{Weinberg:1988cp}
+S.~Weinberg,
+\emph{The cosmological constant problem},
+Rev.\ Mod.\ Phys.\ \textbf{61} (1989) 1.
+
+\bibitem{Ratra:1987rm}
+B.~Ratra and P.~J.~E.~Peebles,
+\emph{Cosmological consequences of a rolling homogeneous scalar
+field},
+Phys.\ Rev.\ D \textbf{37} (1988) 3406.
+
+\bibitem{Frieman:1995pm}
+J.~A.~Frieman, C.~T.~Hill, A.~Stebbins and I.~Waga,
+\emph{Cosmology with ultralight pseudo Nambu--Goldstone bosons},
+Phys.\ Rev.\ Lett.\ \textbf{75} (1995) 2077
+[arXiv:astro-ph/9505060].
+
+\bibitem{Caldwell:2005tm}
+R.~R.~Caldwell and E.~V.~Linder,
+\emph{The limits of quintessence},
+Phys.\ Rev.\ Lett.\ \textbf{95} (2005) 141301
+[arXiv:astro-ph/0505494].
+
+\bibitem{DESI:2024}
+DESI Collaboration,
+\emph{DESI 2024 VI: cosmological constraints from the measurements of
+baryon acoustic oscillations} (2024)
+[arXiv:2404.03002]; and DESI DR2 cosmological results (2025).
+
+\bibitem{Son:2002zn}
+D.~T.~Son,
+\emph{Low-energy quantum effective action for relativistic
+superfluids},
+arXiv:hep-ph/0204199.
+
+\bibitem{Bekenstein:2004ne}
+J.~D.~Bekenstein,
+\emph{Relativistic gravitation theory for the modified Newtonian
+dynamics paradigm},
+Phys.\ Rev.\ D \textbf{70} (2004) 083509
+[arXiv:astro-ph/0403694].
+
+\bibitem{Polyakov:1976fu}
+A.~M.~Polyakov,
+\emph{Quark confinement and topology of gauge theories},
+Nucl.\ Phys.\ B \textbf{120} (1977) 429.
+
+\bibitem{Volovik:2003fe}
+G.~E.~Volovik,
+\emph{The Universe in a Helium Droplet},
+Int.\ Ser.\ Monogr.\ Phys.\ \textbf{117}, Oxford University Press
+(2003).
+
+\bibitem{Padmanabhan:2012ik}
+T.~Padmanabhan,
+\emph{Emergence and Expansion of Cosmic Space as due to the Quest
+for Holographic Equipartition},
+arXiv:1206.4916 [hep-th].
+
+\bibitem{Sorkin:2003bx}
+R.~D.~Sorkin,
+\emph{Causal sets: Discrete gravity},
+in \emph{Lectures on Quantum Gravity}, Springer (2005)
+[arXiv:gr-qc/0309009].
+
+\bibitem{Guth:1979ik}
+A.~H.~Guth,
+\emph{Existence proof of a nonconfining phase in four-dimensional
+$U(1)$ lattice gauge theory},
+Phys.\ Rev.\ D \textbf{21} (1980) 2291.
+
+\bibitem{McGaugh:2016leg}
+S.~S.~McGaugh, F.~Lelli and J.~M.~Schombert,
+\emph{Radial acceleration relation in rotationally supported
+galaxies},
+Phys.\ Rev.\ Lett.\ \textbf{117} (2016) 201101
+[arXiv:1609.05917].
+
+\bibitem{Lelli:2017vgz}
+F.~Lelli, S.~S.~McGaugh, J.~M.~Schombert and M.~S.~Pawlowski,
+\emph{One law to rule them all: the radial acceleration relation of
+galaxies},
+Astrophys.\ J.\ \textbf{836} (2017) 152
+[arXiv:1610.08981].
+
+\end{thebibliography}
+
+\end{document}
