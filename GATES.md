@@ -506,3 +506,448 @@ Cross-repository input: `P5-CL-003` in `zetacheng/5-topological-sector`
 ### Date closed
 
 2026-07-17 — closed negative; the kill-window criterion fired.
+
+## Sea–Ice programme gate stubs (PROPOSED)
+
+The gates below are **stubs** created from the programme Sea–Ice research map
+(`0-programme:sea-ice/SEA_ICE_RESEARCH_MAP.md`, snapshot 2026-07-19,
+re-confirmed against this `GATES.md` before creation — no ID collision with
+`P4-DEWRINKLE-01`, `P4-DRIVEN-01`, `P4-SEA-01`, `P4-WRINKLE-EXC-01`,
+`P4-MONOPOLE-01`). Each is the real, paper-owned object behind a Sea–Ice
+`SI-x` routing alias; the programme repo owns no evidence.
+
+**CLAIMS↔GATES note.** These gate IDs have **no** claim rows in `CLAIMS.md`
+yet, and none is added here. A claim appears only when a gate is actually
+run. The CLAIMS↔GATES guard (`tests/test_repository_structure.py ::
+test_claimed_gates_are_registered`) checks the CLAIMS→GATES direction only —
+every gate ID *cited in* `CLAIMS.md` must have a heading here — so a gate
+with no backing claim is tolerated and the guard is not weakened.
+
+## P4-SEA-ICE-01 — Derived finite-tension Sea–Ice interface
+
+Status: PROPOSED
+
+### Sea–Ice alias
+
+SI-3. Owner: Paper 4.
+
+### Scientific question
+
+Do two admissible phases support a stable finite-tension **microscopic**
+interface?
+
+### Scope
+
+Interface existence and stability between a registered admissible phase pair
+from Paper 2, derived (not posited) from the fixed theory's effective
+potential and kinetic terms.
+
+### Locked assumptions
+
+`CONVENTIONS.md`; the admissible phases and frozen channel basis from Paper 2
+(`P2-PHASE-01`, `P2-MULTIPHASE-GRAV-01`).
+
+### Inputs
+
+Paper 2 admissible phase pair; `V_eff(Φ)`; kinetic terms.
+
+### Dependency
+
+Depends on `P2-PHASE-01` (SI-1) **and** `P2-MULTIPHASE-GRAV-01` (SI-2) in
+`zetacheng/2-emergent-gravity`. Only a CLEAN PASS at SI-2 supports entering
+this gate. Feeds `P4-INTERFACE-DE-01` (SI-4) and `P4-WRINKLE-BRIDGE-01`
+(SI-5a).
+
+### Kill criterion
+
+No interface between any registered admissible phase pair → the Sea–Ice
+realization fails even with healthy homogeneous gravity.
+
+### Required computations
+
+(not started)
+
+### Required deliverables
+
+(not started)
+
+### Result
+
+(not started)
+
+### Reviewer verdict
+
+(not started)
+
+### Consequences
+
+Gates the entire cosmological branch (SI-4, SI-5, SI-6); no interface means
+no interface stress-energy and no interface wrinkles to bind dark matter.
+
+### Repository branch
+
+`sea-ice/gate-stubs`
+
+### Relevant files
+
+`0-programme:sea-ice/SEA_ICE_RESEARCH_MAP.md`,
+`0-programme:sea-ice/SEA_ICE_PHYSICAL_FRAMEWORK.md`.
+
+### Date opened
+
+2026-07-20
+
+### Date closed
+
+Open (PROPOSED stub).
+
+## P4-INTERFACE-DE-01 — Interface stress-energy → observed dark-energy scale
+
+Status: PROPOSED
+
+### Sea–Ice alias
+
+SI-4. Owner: Paper 4. **High-risk magnitude gate.**
+
+### Scientific question
+
+Does the interface's 4D stress-energy (phase-difference energy + interface
+tension) account for the observed dark-energy scale?
+
+### Scope
+
+Magnitude test of the derived interface's background stress-energy against the
+pre-registered `ρ_DE` window; primary target `ρ_DE,obs` (or an equivalent such
+as `H_0² Ω_Λ`), per pre-registration policy §5.
+
+### Locked assumptions
+
+`CONVENTIONS.md`; the derived interface from `P4-SEA-ICE-01`; upstream
+parameters inherited from the frozen Paper 2 domain. Observable and window
+frozen before evaluation (policy §5).
+
+### Inputs
+
+Derived interface (`P4-SEA-ICE-01`); upstream microscopic parameters.
+
+### Dependency
+
+Depends on `P4-SEA-ICE-01` (SI-3).
+
+### Risk flag
+
+**High-risk magnitude gate.** The natural interface scale is likely
+`~Λ_micro⁴`, tens of orders above `ρ_DE,obs ~ (10⁻³ eV)⁴`. The **default
+expectation is failure by scale mismatch** unless a suppression mechanism
+(sequestering, exponential suppression, geometric dilution, collective
+cancellation, critical scaling) is *derived from the fixed theory*, not
+inserted (policy §5). Register the window anyway and compute; do not present
+SI-4 as a routine downstream step.
+
+### Kill criterion
+
+Wrong sign / outside the pre-registered `ρ_DE` window / no accelerating
+solution / needs an inserted `Λ` → the interface-DE mechanism is rejected
+(→ Outcome B possible: the interface can exist while its stress-energy fails
+to account for `ρ_DE`).
+
+### Required computations
+
+(not started)
+
+### Required deliverables
+
+(not started)
+
+### Result
+
+(not started)
+
+### Reviewer verdict
+
+(not started)
+
+### Consequences
+
+A failure here does not fail the galactic gate (SI-6); it downgrades the
+programme to partial survival (Outcome B).
+
+### Repository branch
+
+`sea-ice/gate-stubs`
+
+### Relevant files
+
+`0-programme:sea-ice/SEA_ICE_RESEARCH_MAP.md`,
+`0-programme:sea-ice/SEA_ICE_PREREGISTRATION_POLICY.md`.
+
+### Date opened
+
+2026-07-20
+
+### Date closed
+
+Open (PROPOSED stub).
+
+## P4-EQ-WRINKLE-01 — Equilibrium interface wrinkle (existence)
+
+Status: PROPOSED
+
+### Sea–Ice alias
+
+SI-5-exist. Owner: Paper 4. **Existence life-gate for SI-5.**
+
+### Scientific question
+
+Does the microscopically derived Sea–Ice interface *independently* support a
+stable or dynamically generated equilibrium (or quasi-equilibrium) wrinkle
+background — from its own fluctuation spectrum or nonlinear interface EFT —
+**regardless of the old driven result** (`P4-CL-002`)?
+
+### Scope
+
+Existence of a trap-capable equilibrium wrinkle of the `P4-SEA-ICE-01`
+interface, derived from that interface's own dynamics; independent of the
+driven-dissipative pattern.
+
+### Locked assumptions
+
+`CONVENTIONS.md`; the derived interface from `P4-SEA-ICE-01`.
+
+### Inputs
+
+The `P4-SEA-ICE-01` interface; interface fluctuation spectrum; nonlinear
+interface EFT.
+
+### Dependency
+
+Depends on `P4-SEA-ICE-01` (SI-3). Feeds `P4-BOUND-DM-01` (SI-5-spec); an
+optional evidential link comes from `P4-WRINKLE-BRIDGE-01` (SI-5-id).
+
+### PASS criterion
+
+A sustainable, trap-capable wrinkle background is derived from the interface's
+own fluctuation spectrum / nonlinear EFT.
+
+### Kill criterion
+
+The derived interface supports no wrinkle that can act as a trap → wrinkle-bound
+dark matter has no background → **SI-5 fails here** (this is the real existence
+life-gate).
+
+### Required computations
+
+(not started)
+
+### Required deliverables
+
+(not started)
+
+### Result
+
+(not started)
+
+### Reviewer verdict
+
+(not started)
+
+### Consequences
+
+Supplies (or denies) the equilibrium wrinkle background required by
+`P4-BOUND-DM-01`. Its failure — not a bridge failure — is what kills the
+wrinkle-bound DM branch.
+
+### Repository branch
+
+`sea-ice/gate-stubs`
+
+### Relevant files
+
+`0-programme:sea-ice/SEA_ICE_RESEARCH_MAP.md`.
+
+### Date opened
+
+2026-07-20
+
+### Date closed
+
+Open (PROPOSED stub).
+
+## P4-WRINKLE-BRIDGE-01 — Driven wrinkle ≟ equilibrium interface wrinkle (identity)
+
+Status: PROPOSED
+
+### Sea–Ice alias
+
+SI-5-id. Owner: Paper 4. **Evidence-transfer / identity gate, not a life
+gate.**
+
+### Scientific question
+
+Is the SUPPORTED driven wrinkle (`P4-CL-002`, gate `P4-DRIVEN-01`)
+continuously or dynamically connected to the derived equilibrium wrinkle of
+`P4-EQ-WRINKLE-01`?
+
+### Scope
+
+Identity / evidence-transfer test between the driven-dissipative pattern
+already established (`P4-CL-002`) and the independently derived equilibrium
+wrinkle of `P4-EQ-WRINKLE-01`. This gate decides *inheritance of precedent*
+only; it does **not** decide whether the equilibrium wrinkle exists.
+
+### Locked assumptions
+
+`CONVENTIONS.md`; the driven wrinkle result `P4-CL-002`; the derived
+equilibrium wrinkle background from `P4-EQ-WRINKLE-01`.
+
+### Inputs
+
+Driven pattern (`P4-CL-002`); the `P4-EQ-WRINKLE-01` equilibrium wrinkle
+background.
+
+### Dependency
+
+Depends on `P4-EQ-WRINKLE-01` — the equilibrium wrinkle must exist before one
+can ask whether the driven one matches it. This gate is **not** a precondition
+for `P4-BOUND-DM-01`.
+
+### PASS criterion
+
+The driven and equilibrium wrinkles are continuously/dynamically connected →
+the old `P4-CL-002` may be cited as **supporting precedent** for the
+equilibrium wrinkle.
+
+### Kill criterion
+
+The driven and equilibrium wrinkles are distinct objects → `P4-CL-002` may
+**not** be transferred as evidence; **but this does not kill `P4-EQ-WRINKLE-01`
+or `P4-BOUND-DM-01`** — the derived wrinkle stands on its own existence gate.
+
+### Required computations
+
+(not started)
+
+### Required deliverables
+
+(not started)
+
+### Result
+
+(not started)
+
+### Reviewer verdict
+
+(not started)
+
+### Consequences
+
+A bridge PASS lets `P4-CL-002` (driven, SUPPORTED) be cited as precedent for
+the equilibrium wrinkle; a bridge FAIL only blocks that inheritance and leaves
+the existence (`P4-EQ-WRINKLE-01`) and spectrum (`P4-BOUND-DM-01`) gates
+untouched.
+
+### Repository branch
+
+`sea-ice/gate-stubs`
+
+### Relevant files
+
+`0-programme:sea-ice/SEA_ICE_RESEARCH_MAP.md`; `CLAIMS.md` (`P4-CL-002`).
+
+### Date opened
+
+2026-07-20
+
+### Date closed
+
+Open (PROPOSED stub).
+
+## P4-BOUND-DM-01 — Wrinkle-bound dark-matter modes
+
+Status: PROPOSED
+
+### Sea–Ice alias
+
+SI-5-spec. Owner: Paper 4 (primary), Paper 5 (boundary).
+
+### Scientific question
+
+Does the equilibrium wrinkle trap normalizable, long-lived, pressureless,
+clustering bound modes?
+
+### Scope
+
+Fluctuation spectrum in the derived (equilibrium) wrinkle background; the
+trapped modes are the candidate cold dark matter.
+
+### Locked assumptions
+
+`CONVENTIONS.md`; the equilibrium wrinkle background established by
+`P4-EQ-WRINKLE-01`.
+
+### Inputs
+
+`P4-EQ-WRINKLE-01` equilibrium wrinkle background; fluctuation operator
+`O_fluct`.
+
+### Dependency
+
+Depends on `P4-EQ-WRINKLE-01` (existence of the equilibrium wrinkle).
+`P4-WRINKLE-BRIDGE-01` is an *optional* evidential link, not a precondition.
+
+### Paper 5 boundary
+
+The Paper 5 exclusion of the continuum topological object does **not** decide
+this gate: `P5-OMEGA-01 ⇏ P4-BOUND-DM-01 FAIL` — the localization here comes
+from an independently derived interface, not from self-support of a continuum
+radius — and equally `P5-OMEGA-01` lends the bound modes **no support**.
+
+Pinned to a fixed result: `P5-OMEGA-01` FAILED in
+`zetacheng/5-topological-sector` at commit
+`b35acc0da79a778f753e1816e1f51c720b8a9ad8` (`b35acc0`, the merge of PR #4
+`gate/p5-omega-01-verdict` that landed the FAILED verdict; still on `main`,
+whose current HEAD `234c458` is a later v0.24 paper-text sync of the same
+FAILED status). This boundary statement is tied to that SHA, so a later Paper 5
+update cannot silently change what this gate depends on.
+
+### Kill criterion
+
+No such mode → wrinkle-bound dark matter is rejected; the programme may **not**
+revert to the Paper 5 continuum soliton.
+
+### Required computations
+
+(not started)
+
+### Required deliverables
+
+(not started)
+
+### Result
+
+(not started)
+
+### Reviewer verdict
+
+(not started)
+
+### Consequences
+
+Supplies (or denies) the bound-mode response that Paper 1 needs for SI-6
+(`P1-SEAICE-RAR-01`).
+
+### Repository branch
+
+`sea-ice/gate-stubs`
+
+### Relevant files
+
+`0-programme:sea-ice/SEA_ICE_RESEARCH_MAP.md`.
+
+### Date opened
+
+2026-07-20
+
+### Date closed
+
+Open (PROPOSED stub).
