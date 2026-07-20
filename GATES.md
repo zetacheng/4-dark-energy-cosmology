@@ -689,49 +689,51 @@ programme to partial survival (Outcome B).
 
 Open (PROPOSED stub).
 
-## P4-WRINKLE-BRIDGE-01 — Driven wrinkle ≟ equilibrium interface wrinkle
+## P4-EQ-WRINKLE-01 — Equilibrium interface wrinkle (existence)
 
 Status: PROPOSED
 
 ### Sea–Ice alias
 
-SI-5a. Owner: Paper 4.
+SI-5-exist. Owner: Paper 4. **Existence life-gate for SI-5.**
 
 ### Scientific question
 
-Is the SUPPORTED driven wrinkle (`P4-CL-002`, gate `P4-DRIVEN-01`) the **same
-object** as an equilibrium interface wrinkle of the derived Sea–Ice interface?
+Does the microscopically derived Sea–Ice interface *independently* support a
+stable or dynamically generated equilibrium (or quasi-equilibrium) wrinkle
+background — from its own fluctuation spectrum or nonlinear interface EFT —
+**regardless of the old driven result** (`P4-CL-002`)?
 
 ### Scope
 
-Identity test between the driven-dissipative pattern already established
-(`P4-CL-002`) and an equilibrium wrinkle living in the SI-3 interface
-configuration space.
+Existence of a trap-capable equilibrium wrinkle of the `P4-SEA-ICE-01`
+interface, derived from that interface's own dynamics; independent of the
+driven-dissipative pattern.
 
 ### Locked assumptions
 
-`CONVENTIONS.md`; the driven wrinkle result `P4-CL-002`; the derived interface
-configuration space from `P4-SEA-ICE-01`.
+`CONVENTIONS.md`; the derived interface from `P4-SEA-ICE-01`.
 
 ### Inputs
 
-Driven pattern (`P4-CL-002`); SI-3 interface config space (`P4-SEA-ICE-01`).
+The `P4-SEA-ICE-01` interface; interface fluctuation spectrum; nonlinear
+interface EFT.
 
 ### Dependency
 
-Depends on `P4-SEA-ICE-01` (SI-3). Feeds `P4-BOUND-DM-01` (SI-5b).
+Depends on `P4-SEA-ICE-01` (SI-3). Feeds `P4-BOUND-DM-01` (SI-5-spec); an
+optional evidential link comes from `P4-WRINKLE-BRIDGE-01` (SI-5-id).
 
-### PASS criteria (from the map)
+### PASS criterion
 
-To pass, the driven and equilibrium wrinkles must share: the **same order
-parameter**; a **compatible dispersion relation**; the **drive vanishing in
-the appropriate limit**; and a **profile lying in the SI-3 interface
-configuration space**.
+A sustainable, trap-capable wrinkle background is derived from the interface's
+own fluctuation spectrum / nonlinear EFT.
 
 ### Kill criterion
 
-Driven and equilibrium wrinkles are distinct objects → the DM programme may
-not inherit `P4-CL-002` as its background.
+The derived interface supports no wrinkle that can act as a trap → wrinkle-bound
+dark matter has no background → **SI-5 fails here** (this is the real existence
+life-gate).
 
 ### Required computations
 
@@ -751,8 +753,98 @@ not inherit `P4-CL-002` as its background.
 
 ### Consequences
 
-Without this bridge, `P4-CL-002` (driven, SUPPORTED) cannot be used as the
-equilibrium background for the wrinkle-bound dark-matter gate.
+Supplies (or denies) the equilibrium wrinkle background required by
+`P4-BOUND-DM-01`. Its failure — not a bridge failure — is what kills the
+wrinkle-bound DM branch.
+
+### Repository branch
+
+`sea-ice/gate-stubs`
+
+### Relevant files
+
+`0-programme:sea-ice/SEA_ICE_RESEARCH_MAP.md`.
+
+### Date opened
+
+2026-07-20
+
+### Date closed
+
+Open (PROPOSED stub).
+
+## P4-WRINKLE-BRIDGE-01 — Driven wrinkle ≟ equilibrium interface wrinkle (identity)
+
+Status: PROPOSED
+
+### Sea–Ice alias
+
+SI-5-id. Owner: Paper 4. **Evidence-transfer / identity gate, not a life
+gate.**
+
+### Scientific question
+
+Is the SUPPORTED driven wrinkle (`P4-CL-002`, gate `P4-DRIVEN-01`)
+continuously or dynamically connected to the derived equilibrium wrinkle of
+`P4-EQ-WRINKLE-01`?
+
+### Scope
+
+Identity / evidence-transfer test between the driven-dissipative pattern
+already established (`P4-CL-002`) and the independently derived equilibrium
+wrinkle of `P4-EQ-WRINKLE-01`. This gate decides *inheritance of precedent*
+only; it does **not** decide whether the equilibrium wrinkle exists.
+
+### Locked assumptions
+
+`CONVENTIONS.md`; the driven wrinkle result `P4-CL-002`; the derived
+equilibrium wrinkle background from `P4-EQ-WRINKLE-01`.
+
+### Inputs
+
+Driven pattern (`P4-CL-002`); the `P4-EQ-WRINKLE-01` equilibrium wrinkle
+background.
+
+### Dependency
+
+Depends on `P4-EQ-WRINKLE-01` — the equilibrium wrinkle must exist before one
+can ask whether the driven one matches it. This gate is **not** a precondition
+for `P4-BOUND-DM-01`.
+
+### PASS criterion
+
+The driven and equilibrium wrinkles are continuously/dynamically connected →
+the old `P4-CL-002` may be cited as **supporting precedent** for the
+equilibrium wrinkle.
+
+### Kill criterion
+
+The driven and equilibrium wrinkles are distinct objects → `P4-CL-002` may
+**not** be transferred as evidence; **but this does not kill `P4-EQ-WRINKLE-01`
+or `P4-BOUND-DM-01`** — the derived wrinkle stands on its own existence gate.
+
+### Required computations
+
+(not started)
+
+### Required deliverables
+
+(not started)
+
+### Result
+
+(not started)
+
+### Reviewer verdict
+
+(not started)
+
+### Consequences
+
+A bridge PASS lets `P4-CL-002` (driven, SUPPORTED) be cited as precedent for
+the equilibrium wrinkle; a bridge FAIL only blocks that inheritance and leaves
+the existence (`P4-EQ-WRINKLE-01`) and spectrum (`P4-BOUND-DM-01`) gates
+untouched.
 
 ### Repository branch
 
@@ -776,11 +868,11 @@ Status: PROPOSED
 
 ### Sea–Ice alias
 
-SI-5b. Owner: Paper 4 (primary), Paper 5 (boundary).
+SI-5-spec. Owner: Paper 4 (primary), Paper 5 (boundary).
 
 ### Scientific question
 
-Does the derived wrinkle trap normalizable, long-lived, pressureless,
+Does the equilibrium wrinkle trap normalizable, long-lived, pressureless,
 clustering bound modes?
 
 ### Scope
@@ -791,15 +883,17 @@ trapped modes are the candidate cold dark matter.
 ### Locked assumptions
 
 `CONVENTIONS.md`; the equilibrium wrinkle background established by
-`P4-WRINKLE-BRIDGE-01`.
+`P4-EQ-WRINKLE-01`.
 
 ### Inputs
 
-Wrinkle background; fluctuation operator `O_fluct`.
+`P4-EQ-WRINKLE-01` equilibrium wrinkle background; fluctuation operator
+`O_fluct`.
 
 ### Dependency
 
-Depends on `P4-WRINKLE-BRIDGE-01` (SI-5a).
+Depends on `P4-EQ-WRINKLE-01` (existence of the equilibrium wrinkle).
+`P4-WRINKLE-BRIDGE-01` is an *optional* evidential link, not a precondition.
 
 ### Paper 5 boundary
 
@@ -807,6 +901,14 @@ The Paper 5 exclusion of the continuum topological object does **not** decide
 this gate: `P5-OMEGA-01 ⇏ P4-BOUND-DM-01 FAIL` — the localization here comes
 from an independently derived interface, not from self-support of a continuum
 radius — and equally `P5-OMEGA-01` lends the bound modes **no support**.
+
+Pinned to a fixed result: `P5-OMEGA-01` FAILED in
+`zetacheng/5-topological-sector` at commit
+`b35acc0da79a778f753e1816e1f51c720b8a9ad8` (`b35acc0`, the merge of PR #4
+`gate/p5-omega-01-verdict` that landed the FAILED verdict; still on `main`,
+whose current HEAD `234c458` is a later v0.24 paper-text sync of the same
+FAILED status). This boundary statement is tied to that SHA, so a later Paper 5
+update cannot silently change what this gate depends on.
 
 ### Kill criterion
 
